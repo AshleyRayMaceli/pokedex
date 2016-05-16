@@ -30,6 +30,73 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: moves; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+--
+
+CREATE TABLE moves (
+    id integer NOT NULL,
+    name character varying
+);
+
+
+ALTER TABLE moves OWNER TO "Guest";
+
+--
+-- Name: moves_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+--
+
+CREATE SEQUENCE moves_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE moves_id_seq OWNER TO "Guest";
+
+--
+-- Name: moves_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+--
+
+ALTER SEQUENCE moves_id_seq OWNED BY moves.id;
+
+
+--
+-- Name: moves_pokemons; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+--
+
+CREATE TABLE moves_pokemons (
+    id integer NOT NULL,
+    move_id integer,
+    pokemon_id integer
+);
+
+
+ALTER TABLE moves_pokemons OWNER TO "Guest";
+
+--
+-- Name: moves_pokemons_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+--
+
+CREATE SEQUENCE moves_pokemons_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE moves_pokemons_id_seq OWNER TO "Guest";
+
+--
+-- Name: moves_pokemons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+--
+
+ALTER SEQUENCE moves_pokemons_id_seq OWNED BY moves_pokemons.id;
+
+
+--
 -- Name: pokemons; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
@@ -73,7 +140,72 @@ ALTER SEQUENCE pokemons_id_seq OWNED BY pokemons.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
+ALTER TABLE ONLY moves ALTER COLUMN id SET DEFAULT nextval('moves_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY moves_pokemons ALTER COLUMN id SET DEFAULT nextval('moves_pokemons_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
+--
+
 ALTER TABLE ONLY pokemons ALTER COLUMN id SET DEFAULT nextval('pokemons_id_seq'::regclass);
+
+
+--
+-- Data for Name: moves; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY moves (id, name) FROM stdin;
+1	Tackle
+2	Vine Whip
+3	Leech Seed
+4	Razor Leaf
+7	Tackle
+8	Razor Leaf
+9	Vine Whip
+10	Poison Powder
+11	Solar Beam
+\.
+
+
+--
+-- Name: moves_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+--
+
+SELECT pg_catalog.setval('moves_id_seq', 11, true);
+
+
+--
+-- Data for Name: moves_pokemons; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY moves_pokemons (id, move_id, pokemon_id) FROM stdin;
+1	1	1
+2	2	1
+3	3	1
+4	4	1
+5	0	2
+6	5	2
+7	6	2
+8	7	2
+9	8	2
+10	9	2
+11	10	2
+12	11	3
+\.
+
+
+--
+-- Name: moves_pokemons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+--
+
+SELECT pg_catalog.setval('moves_pokemons_id_seq', 13, true);
 
 
 --
@@ -109,6 +241,22 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 --
 
 SELECT pg_catalog.setval('pokemons_id_seq', 20, true);
+
+
+--
+-- Name: moves_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+--
+
+ALTER TABLE ONLY moves
+    ADD CONSTRAINT moves_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: moves_pokemons_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+--
+
+ALTER TABLE ONLY moves_pokemons
+    ADD CONSTRAINT moves_pokemons_pkey PRIMARY KEY (id);
 
 
 --
