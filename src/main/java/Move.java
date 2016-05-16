@@ -62,7 +62,8 @@ public class Move {
       return false;
     } else {
       Move newMove = (Move) otherMove;
-      return this.getId() == newMove.getId();
+      return this.getId() == newMove.getId() &&
+             this.getName().equals(newMove.getName());
     }
   }
 }

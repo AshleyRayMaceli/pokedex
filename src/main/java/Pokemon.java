@@ -95,6 +95,7 @@ public class Pokemon {
       .executeUpdate();
     }
   }
+
   @Override
   public boolean equals(Object otherPokemon){
     if (!(otherPokemon instanceof Pokemon)) {
@@ -103,6 +104,31 @@ public class Pokemon {
       Pokemon newPokemon = (Pokemon) otherPokemon;
       return this.getId() == newPokemon.getId() &&
              this.getName().equals(newPokemon.getName());
+    }
+  }
+
+  public void addMove(Move move) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO moves_pokemons (move_id, pokemon_id) VALUES (:move_id, :pokemon_id)";
+      con.createQuery(sql)
+        .addParameter("pokemon_id", this.getId())
+        .addParameter("move_id", move.getId())
+        .executeUpdate();
+      }
+    }
+
+  public List<Move> getMoves() {
+    try(Connection con = DB.sql2o.open()) {
+      String joinQuery = "SELECT moves.* FROM pokemons " +
+      "JOIN moves_pokemons ON (pokemons.id = moves_pokemons.pokemon_id) " +
+      "JOIN moves ON (moves_pokemons.move_id = moves.id) " +
+      "WHERE pokemons.id = :pokemon_id";
+
+      List<Move> moves = con.createQuery(joinQuery)
+        .addParameter("pokemon_id", this.getId())
+        .executeAndFetch(Move.class);
+
+      return moves;
     }
   }
 
