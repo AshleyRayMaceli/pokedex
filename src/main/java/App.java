@@ -14,5 +14,12 @@ public class App {
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/pokedex", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("pokemons", Pokemon.all());
+      model.put("template", "templates/pokedex.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
