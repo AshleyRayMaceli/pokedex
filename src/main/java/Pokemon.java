@@ -75,7 +75,7 @@ public class Pokemon {
   }
 
   public static List<Pokemon> all() {
-  String sql = "SELECT * FROM pokemons";
+  String sql = "SELECT * FROM pokemons ORDER BY id ASC";
   try(Connection con = DB.sql2o.open()) {
     return con.createQuery(sql).executeAndFetch(Pokemon.class);
     }
