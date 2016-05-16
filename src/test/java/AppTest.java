@@ -23,9 +23,9 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  @Test
-  public void rootTest() {
-
-  }
+  // @Test
+  // public void rootTest() {
+  //
+  // }
 
 }

@@ -65,3 +65,4 @@ public class Move {
       return this.getId() == newMove.getId();
     }
   }
+}

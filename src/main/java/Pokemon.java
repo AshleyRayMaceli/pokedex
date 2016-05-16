@@ -12,9 +12,9 @@ public class Pokemon {
   private double weight;
   private int height;
   private int evolves;
-  private boolean mega-evolves;
+  private boolean mega_evolves;
 
-  public Pokemon(String name, String type_1, String type_2, String description, double weight, int height, int evolves, boolean mega-evolves) {
+  public Pokemon(String name, String type_1, String type_2, String description, double weight, int height, int evolves, boolean mega_evolves) {
     this.name = name;
     this.type_1 = type_1;
     this.type_2 = type_2;
@@ -44,7 +44,7 @@ public class Pokemon {
     return evolves;
   }
   public boolean getMega_evolves() {
-    return mega-evolves;
+    return mega_evolves;
   }
   public String getName() {
     return name;
@@ -101,7 +101,8 @@ public class Pokemon {
       return false;
     } else {
       Pokemon newPokemon = (Pokemon) otherPokemon;
-      return this.getId() == newPokemon.getId();
+      return this.getId() == newPokemon.getId() &&
+             this.getName().equals(newPokemon.getName());
     }
   }
 
