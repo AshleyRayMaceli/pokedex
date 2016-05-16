@@ -20,10 +20,19 @@ pokepage.vtl
 
 <div class="row poke-attacks">
   <div class="col-md-10 col-md-offset-1 moveset1">
+    <h2>Known Moves:</h2>
     #foreach ($move in $pokemon.getMoves())
-      move.getName()
+      $move.getName()
+      <br>
     #end
   </div>
+
+  <form action="/pokepage/$pokemon.getId()/move/new" method="post">
+  <input id="move" name="move" type="text" required>
+
+  <button type="submit" class="btn btn-warning" id="moveSubmit">Add Move</button>
+</form>
+
 
 </div>
 <div class= "row home">
