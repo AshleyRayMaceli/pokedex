@@ -70,4 +70,11 @@ public class PokemonTest {
     assertEquals(0, Pokemon.all().size());
     assertEquals(0, myPokemon.getMoves().size());
   }
+
+  @Test
+  public void searchByName_findAllPokemonWithSearchInputString_List() {
+    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
+    myPokemon.save();
+    assertEquals(myPokemon, Pokemon.searchByName("squir").get(0));
+  }
 }

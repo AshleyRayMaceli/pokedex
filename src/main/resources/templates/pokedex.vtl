@@ -1,7 +1,14 @@
-#foreach ($pokemon in $pokemons)
+<form action="/pokedex/name-search" method="post">
+  <label for="name">Search Pokemon by Name:</label>
+  <input id="name" name="name" type="text" required>
+  <button type="submit" class="btn btn-success">Search Pokemon</button>
+</form>
+<br>
+<a href="/" class="btn btn-info">Back To Home</a>
 
+#foreach ($pokemon in $pokemons)
 $pokemon.getName()
 <br>
-<img src=${pokemon.getName()}.gif>
+<img src=/${pokemon.getName()}.gif>
 <br>
 #end

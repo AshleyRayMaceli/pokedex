@@ -139,4 +139,13 @@ public class Pokemon {
     }
   }
 
+  public static List<Pokemon> searchByName(String name) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM pokemons WHERE LOWER (name) LIKE :name";
+      return con.createQuery(sql)
+        .addParameter("name", '%' + name + '%')
+        .executeAndFetch(Pokemon.class);
+    }
+  }
+
 }
