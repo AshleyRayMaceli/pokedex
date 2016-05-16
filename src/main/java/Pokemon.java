@@ -28,8 +28,11 @@ public class Pokemon {
   public int getId() {
     return id;
   }
-  public String getTypes() {
-    return type_1 + " " + type_2;
+  public String getType1() {
+    return type_1;
+  }
+  public String getType2() {
+    return type_2;
   }
   public String getDescription() {
     return description;
@@ -50,6 +53,10 @@ public class Pokemon {
     return name;
   }
 
+  public String getImageName() {
+    return name + ".gif";
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO pokemons (name, type_1, type_2, description, weight, height, evolves, mega_evolves) VALUES (:name, :type_1, :type_2, :description, :weight, :height, :evolves, :mega_evolves)";
@@ -68,7 +75,7 @@ public class Pokemon {
   }
 
   public static List<Pokemon> all() {
-  String sql = "SELECT * FROM pokemons";
+  String sql = "SELECT * FROM pokemons ORDER BY id ASC";
   try(Connection con = DB.sql2o.open()) {
     return con.createQuery(sql).executeAndFetch(Pokemon.class);
     }
