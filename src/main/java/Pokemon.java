@@ -28,8 +28,11 @@ public class Pokemon {
   public int getId() {
     return id;
   }
-  public String getTypes() {
-    return type_1 + " " + type_2;
+  public String getType1() {
+    return type_1;
+  }
+  public String getType2() {
+    return type_2;
   }
   public String getDescription() {
     return description;
@@ -48,6 +51,10 @@ public class Pokemon {
   }
   public String getName() {
     return name;
+  }
+
+  public String getImageName() {
+    return name + ".gif";
   }
 
   public void save() {

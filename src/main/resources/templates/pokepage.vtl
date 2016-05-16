@@ -1,0 +1,31 @@
+pokepage.vtl
+
+<div class="row poke-img">
+  <div class="col-md-5 col-md-offset-1 poke-img">
+    <img src=/$pokemon.getImageName()>
+  </div>
+  <div class="col-md-5 col-md-offset-1 poke-stats">
+    <h1>$pokemon.getName()</h1>
+    <h3>$pokemon.getType1() - $pokemon.getType2()</h3>
+    <h3>$pokemon.getWeight() lbs</h3>
+    <h3>$pokemon.getHeight() inches</h3>
+  </div>
+</div>
+
+<div class="row poke-description">
+  <div class="col-md-10 col-md-offset-1">
+    <p class="poke-text">$pokemon.getDescription()</p>
+  </div>
+</div>
+
+<div class="row poke-attacks">
+  <div class="col-md-10 col-md-offset-1 moveset1">
+    #foreach ($move in $pokemon.getMoves())
+      move.getName()
+    #end
+  </div>
+
+</div>
+<div class= "row home">
+  <p>Home</p>
+</div>
