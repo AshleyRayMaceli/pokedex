@@ -21,5 +21,13 @@ public class App {
       model.put("template", "templates/pokedex.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/pokedex/name-search", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String name = request.queryParams("name");
+      model.put("pokemons", Pokemon.searchByName(name));
+      model.put("template", "templates/pokedex.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
