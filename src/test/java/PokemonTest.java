@@ -59,15 +59,15 @@ public class PokemonTest {
     assertTrue(myMove.equals(savedMove));
   }
 
-  // @Test
-  // public void delete_deleteAllPokemonAndMovesAssociations() {
-  //   Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
-  //   myPokemon.save();
-  //   Move myMove = new Move("Bubble");
-  //   myMove.save();
-  //   myPokemon.addMove(myMove);
-  //   myPokemon.delete();
-  //   assertEquals(0, Pokemon.all().size());
-  //   assertEquals(0, myMove.getPokemon().size());
-  // }
+  @Test
+  public void delete_deleteAllPokemonAndMovesAssociations() {
+    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
+    myPokemon.save();
+    Move myMove = new Move("Bubble");
+    myMove.save();
+    myPokemon.addMove(myMove);
+    myPokemon.delete();
+    assertEquals(0, Pokemon.all().size());
+    assertEquals(0, myPokemon.getMoves().size());
+  }
 }
