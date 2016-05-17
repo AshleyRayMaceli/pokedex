@@ -9,10 +9,12 @@
 
 #if($pokemons.size() > 0)
   #foreach ($pokemon in $pokemons)
-  <a href="/pokepage/$pokemon.getId()">$pokemon.getName()
+  <div class ="col-md-3 pokebox">
+  <a href="/pokepage/$pokemon.getId()">#$pokemon.getId() - $pokemon.getName()
   <br>
   <img src=/${pokemon.getName()}.gif></a>
   <br>
+  </div>
   #end
 #else
   <h2>No matches for your search results</h2>
