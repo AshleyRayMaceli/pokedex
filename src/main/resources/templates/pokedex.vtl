@@ -7,8 +7,8 @@
 <a href="/" class="btn btn-info">Back To Home</a>
 
 #foreach ($pokemon in $pokemons)
-$pokemon.getName()
+<a href="/pokepage/$pokemon.getId()">$pokemon.getName()
 <br>
-<img src=/${pokemon.getName()}.gif>
+<img src=/${pokemon.getName()}.gif></a>
 <br>
 #end

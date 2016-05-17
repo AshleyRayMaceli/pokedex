@@ -5,7 +5,7 @@ pokepage.vtl
     <img src=/$pokemon.getImageName()>
   </div>
   <div class="col-md-5 col-md-offset-1 poke-stats">
-    <h1>$pokemon.getName()</h1>
+    <h1>$pokemon.getName() - #$pokemon.getId()</h1>
     <h3>$pokemon.getType1() - $pokemon.getType2()</h3>
     <h3>$pokemon.getWeight() lbs</h3>
     <h3>$pokemon.getHeight() inches</h3>
@@ -36,5 +36,20 @@ pokepage.vtl
 
 </div>
 <div class= "row home">
-  <p><a href="/pokedex">Home</a></p>
+  #if ($pokemon.getId() == 1)
+  <a href="/pokepage/151"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+  #else
+  <a href="/pokepage/$pokemon.getPreviousId()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+  #end
+
+  <a href="/pokedex">Home</a>
+
+  #if ($pokemon.getId() == 151)
+  <a href="/pokepage/1">
+  <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
+  #else
+  <a href="/pokepage/$pokemon.getNextId()">
+  <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
+  #end
+
 </div>

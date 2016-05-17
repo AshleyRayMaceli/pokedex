@@ -6,3 +6,11 @@ img {
   width: 125px;
   height: 125px;
 }
+
+.glyphicon-triangle-left {
+  float: left;
+}
+
+.glyphicon-triangle-right {
+  float: right;
+}

@@ -57,6 +57,14 @@ public class Pokemon {
     return name + ".gif";
   }
 
+  public int getPreviousId() {
+    return id - 1;
+  }
+
+  public int getNextId() {
+    return id + 1;
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO pokemons (name, type_1, type_2, description, weight, height, evolves, mega_evolves) VALUES (:name, :type_1, :type_2, :description, :weight, :height, :evolves, :mega_evolves)";
