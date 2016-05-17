@@ -1,3 +1,17 @@
+<form action="/pokedex/new" method="post">
+  <label for="newPokemonName">Add A Pokemon (REMOVE THIS FOR 151 MODE)</label>
+  <input id="newPokemonName" name="newPokemonName" type="text" value="name" required>
+  <input id="newPokemonDescription" name="newPokemonDescription" type="text" value="description" required>
+  <input id="newPokemonType1" name="newPokemonType1" type="text" value="type1" required>
+  <input id="newPokemonType2" name="newPokemonType2" type="text" value="type2" required>
+  <input id="newPokemonWeight" name="newPokemonWeight" type="text" value="weight" required>
+  <input id="newPokemonHeight" name="newPokemonHeight" type="text" value="height" required>
+  <input id="newPokemonEvolves" name="newPokemonEvolves" type="text" value="evolves" required>
+  <input id="newPokemonMegaEvolves" name="newPokemonMegaEvolves" type="text" value="megaevolves" required>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+
 <form action="/pokedex/name-search" method="post">
   <label for="name">Search Pokemon by Name:</label>
   <input id="name" name="name" type="text" required>
@@ -9,9 +23,6 @@
   <input id="strongAgainst" name="strongAgainst" type="text" required>
   <button type="submit" class="btn btn-success">List my ideal enemies!</button>
 </form>
-<br>
-<a href="/" class="btn btn-info">Back To Home</a>
-<br>
 
 #if($pokemons.size() > 0)
   #foreach ($pokemon in $pokemons)
@@ -26,3 +37,7 @@
   <h2>No matches for your search results</h2>
   <h2>Try another search or press the Home button</h2>
 #end
+
+<br>
+<a href="/" class="btn btn-info">Back To Home</a>
+<br>
