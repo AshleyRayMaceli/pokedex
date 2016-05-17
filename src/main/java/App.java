@@ -34,6 +34,7 @@ public class App {
     get("/pokepage/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Pokemon pokemon = Pokemon.find(Integer.parseInt(request.params("id")));
+      model.put("pokemons", Pokemon.all());
       model.put("pokemon", pokemon);
       model.put("template", "templates/pokepage.vtl");
       return new ModelAndView(model, layout);

@@ -37,14 +37,14 @@ pokepage.vtl
 </div>
 <div class= "row home">
   #if ($pokemon.getId() == 1)
-  <a href="/pokepage/151"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+  <a href="/pokepage/$pokemons.size()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
   #else
   <a href="/pokepage/$pokemon.getPreviousId()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
   #end
 
   <a href="/pokedex">Home</a>
 
-  #if ($pokemon.getId() == 151)
+  #if ($pokemon.getId() == $pokemons.size())
   <a href="/pokepage/1">
   <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
   #else

@@ -14,3 +14,8 @@ img {
 .glyphicon-triangle-right {
   float: right;
 }
+
+.arrows {
+  font-size: 40pt;
+  display: block;
+}
