@@ -2,6 +2,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import org.sql2o.*;
+import java.util.Arrays;
 
 public class Pokemon {
   private int id;
@@ -140,12 +141,133 @@ public class Pokemon {
   }
 
   public static List<Pokemon> searchByName(String name) {
+    name = name.toLowerCase();
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM pokemons WHERE LOWER (name) LIKE :name";
       return con.createQuery(sql)
         .addParameter("name", '%' + name + '%')
         .executeAndFetch(Pokemon.class);
     }
+  }
+
+  public double effectiveness (Pokemon defendingPokemon, String attackType) {
+    String[] defenderTypes = {defendingPokemon.getType1(), defendingPokemon.getType2()};
+    double effectiveness = 1;
+
+    for (String type : defenderTypes ) {
+
+      if (attackType.equals("Normal")) {
+        if (type.contains("Rock")) {
+          effectiveness *= .5;
+        } else if (type.contains("Ghost")) {
+          effectiveness = 0;
+        }
+      }
+      if (attackType.equals("Fire")) {
+        if (type.equals("Fire") || type.equals("Water") || type.equals("Rock") || type.equals("Dragon")) {
+          effectiveness *= .5;
+        } else if (type.equals("Grass") || type.equals("Bug") || type.equals("Ice")) {
+          effectiveness *=2;
+        }
+      }
+      if (attackType.equals("Water")) {
+        if (type.equals("Fire") || type.equals("Ground") || type.equals("Rock")) {
+          effectiveness *=2;
+        } else if (type.equals("Water") || type.equals("Grass") || type.equals("Dragon")) {
+          effectiveness *=.5;
+        }
+      }
+      if (attackType.equals("Electric")) {
+        if (type.equals("Water") || type.equals("Flying")) {
+          effectiveness *=2;
+        } else if (type.equals("Electric") || type.equals("Grass") || type.equals("Dragon")) {
+          effectiveness *= .5;
+        } else if (type.equals("Ground")) {
+          effectiveness = 0;
+        }
+      }
+      if (attackType.equals("Grass")) {
+        if (type.equals("Fire") || type.equals("Grass") || type.equals("Poison") || type.equals("Flying") || type.equals("Bug") || type.equals("Dragon")) {
+          effectiveness *= .5;
+        } else if (type.equals("Water") || type.equals("Ground") || type.equals("Rock")) {
+          effectiveness *= 2;
+        }
+      }
+      if (attackType.equals("Ice")) {
+        if (type.equals("Fire") || type.equals("Water") || type.equals("Ice")) {
+          effectiveness *= .5;
+        } else if (type.equals("Grass") || type.equals("Ground") || type.equals("Flying") || type.equals("Dragon")) {
+          effectiveness *=2;
+        }
+      }
+      if (attackType.equals("Fighting")) {
+        if (type.equals("Normal") || type.equals("Ice") || type.equals("Rock")) {
+          effectiveness *=2;
+        } else if (type.equals("Poison") || type.equals("Flying") || type.equals("Psychic") || type.equals("Bug")) {
+          effectiveness *=.5;
+        } else if (type.equals("Ghost")) {
+          effectiveness = 0;
+        }
+      }
+      if (attackType.equals("Poison")) {
+        if (type.equals("Grass")) {
+          effectiveness *= 2;
+        } else if (type.equals("Poison") || type.equals("Ground") || type.equals("Rock") || type.equals("Ghost")) {
+          effectiveness *=.5;
+        }
+      }
+      if (attackType.equals("Ground")) {
+        if (type.equals("Fire") || type.equals("Electric") || type.equals("Poison") || type.equals("Rock")) {
+          effectiveness *=2;
+        } else if (type.equals("Grass") || type.equals("Bug")) {
+          effectiveness *=.5;
+        } else if (type.equals("Flying")) {
+          effectiveness = 0;
+        }
+      }
+      if (attackType.equals("Flying")) {
+        if (type.equals("Grass") || type.equals("Fighting") || type.equals("Bug")) {
+          effectiveness *= 2;
+        } else if (type.equals("Electric") || type.equals("Rock")) {
+          effectiveness *=.5;
+        }
+      }
+      if (attackType.equals("Psychic")) {
+        if (type.equals("Fighting") || type.equals("Ground")) {
+          effectiveness *= 2;
+        } else if (type.equals("Psychic")) {
+          effectiveness *=.5;
+        }
+      }
+      if (attackType.equals("Bug")) {
+        if (type.equals("Grass") || type.equals("Psychic")) {
+          effectiveness *=2;
+        } else if (type.equals("Fire") || type.equals("Fighting") || type.equals("Poison") || type.equals("Flying") || type.equals("Ghost")) {
+          effectiveness *=.5;
+        }
+      }
+      if (attackType.equals("Rock")) {
+        if (type.equals("Fire") || type.equals("Ice") || type.equals("Flying") || type.equals("Bug")) {
+          effectiveness *=2;
+        } else if (type.equals("Fighting") || type.equals("Ground")) {
+          effectiveness *=.5;
+        }
+      }
+      if (attackType.equals("Ghost")) {
+        if (type.equals("Psychic") || type.equals("Ghost")) {
+          effectiveness *=2;
+        } else if (type.equals("Normal")) {
+          effectiveness *=0;
+        }
+      }
+      if (attackType.equals("Dragon")) {
+        if (type.equals("Dragon")) {
+          effectiveness *=2;
+        }
+      }
+
+    }
+    return effectiveness;
   }
 
 }
