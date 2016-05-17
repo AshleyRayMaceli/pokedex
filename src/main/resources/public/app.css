@@ -3,6 +3,19 @@ body {
 }
 
 img {
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
+}
+
+.glyphicon-triangle-left {
+  float: left;
+}
+
+.glyphicon-triangle-right {
+  float: right;
+}
+
+.arrows {
+  font-size: 40pt;
+  display: block;
 }

@@ -23,9 +23,45 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  // @Test
-  // public void rootTest() {
-  //
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Pokedex");
+  }
+
+  @Test
+  public void allPokemonPageIsDisplayed() {
+    goTo("http://localhost:4567/");
+    click("a", withText("View the full Pokedex!"));
+    assertThat(pageSource().contains("Ivysaur"));
+    assertThat(pageSource().contains("Charizard"));
+  }
+
+  @Test
+  public void individualPokemonPageIsDisplayed() {
+    goTo("http://localhost:4567/pokepage/6");
+    assertThat(pageSource().contains("Charizard"));
+  }
+
+  @Test
+  public void arrowsCycleThroughPokedexCorrectly() {
+    goTo("http://localhost:4567/pokepage/6");
+    click(".glyphicon-triangle-right");
+    assertThat(pageSource().contains("Squirtle"));
+  }
+
+  @Test
+  public void searchResultsReturnMatches() {
+    goTo("http://localhost:4567/pokedex");
+    fill("#name").with("char");
+    assertThat(pageSource().contains("Charizard"));
+  }
+
+  @Test
+  public void searchResultsReturnNoMatches() {
+    goTo("http://localhost:4567/pokedex");
+    fill("#name").with("x");
+    assertThat(pageSource().contains("No matches for your search results"));
+  }
 
 }
