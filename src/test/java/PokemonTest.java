@@ -93,4 +93,5 @@ public class PokemonTest {
       Pokemon otherPokemon = new Pokemon("Chia-Squirtle", "Water", "Grass", "A squirtle with chia-pet seeds on its shell", 50.0, 12, 16, false);
       assertEquals(.25, myPokemon.effectiveness(otherPokemon, "Water"), 0);
     }
+
 }
