@@ -217,6 +217,8 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 18	Normal	Flying	Pidgeot	This Pokémon has a dazzling plumage of beautifully glossy feathers. Many Trainers are captivated by the striking beauty of the feathers on its head, compelling them to choose Pidgeot as their Pokémon.	87.0999999999999943	59	t	0
 19	Normal	None	Rattata	Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.	7.70000000000000018	12	f	20
 20	Normal	None	Raticate	Raticate's sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.	40.7999999999999972	28	f	0
+21	Normal	Flying	Spearow	\N	4.40000000000000036	12	f	20
+22	Normal	Flying	Fearow	\N	83.7999999999999972	47	f	0
 2	Grass	Poison	Ivysaur	There is a bud on this Pokémon's back. To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.	28.6999999999999993	39	f	32
 3	Grass	Poison	Venusaur	There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.	220.5	79	t	0
 4	Fire	None	Charmander	The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.	18.6999999999999993	24	f	16
@@ -240,7 +242,7 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 -- Name: pokemons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('pokemons_id_seq', 20, true);
+SELECT pg_catalog.setval('pokemons_id_seq', 22, true);
 
 
 --
