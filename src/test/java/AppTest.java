@@ -43,4 +43,11 @@ public class AppTest extends FluentTest {
     assertThat(pageSource().contains("Charizard"));
   }
 
+  @Test
+  public void arrowsCycleThroughPokedexCorrectly() {
+    goTo("http://localhost:4567/pokepage/6");
+    click(".glyphicon-triangle-right");
+    assertThat(pageSource().contains("Squirtle"));
+  }
+
 }
