@@ -50,7 +50,7 @@ public class PokemonTest {
 
   @Test
   public void addMove_addMoveToPokemon() {
-    Move myMove = new Move("Punch");
+    Move myMove = new Move("Punch", "Normal", 50.0, 100);
     myMove.save();
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -63,7 +63,7 @@ public class PokemonTest {
   public void delete_deleteAllPokemonAndMovesAssociations() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
-    Move myMove = new Move("Bubble");
+    Move myMove = new Move("Bubble", "Water", 50.0, 100);
     myMove.save();
     myPokemon.addMove(myMove);
     myPokemon.delete();
@@ -77,20 +77,4 @@ public class PokemonTest {
     myPokemon.save();
     assertEquals(myPokemon, Pokemon.searchByName("squir").get(0));
   }
-
-    @Test
-    public void effectiveness_test_works() {
-      Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
-      myPokemon.save();
-      Pokemon otherPokemon = new Pokemon("Flaming Rock Pikachu", "Rock", "Fire", "A flaming rat", 50.0, 12, 16, false);
-      assertEquals(4, myPokemon.effectiveness(otherPokemon, "Water"), 0);
-    }
-
-    @Test
-    public void effectiveness_test_works_strongAgainstBoth_point25() {
-      Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
-      myPokemon.save();
-      Pokemon otherPokemon = new Pokemon("Chia-Squirtle", "Water", "Grass", "A squirtle with chia-pet seeds on its shell", 50.0, 12, 16, false);
-      assertEquals(.25, myPokemon.effectiveness(otherPokemon, "Water"), 0);
-    }
 }
