@@ -11,6 +11,11 @@ public class App {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
+    Pokemon pokemon1 = Pokemon.searchByName("Charizard").get(0);
+    Pokemon pokemon2 = Pokemon.searchByName("Blastoise").get(0);
+    pokemon1.hp = 500;
+    pokemon2.hp = 500;
+
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
@@ -58,29 +63,36 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // post("/pokepage/:id/move/new", (request, response) -> {
-    //   Pokemon pokemon = Pokemon.find(Integer.parseInt(request.params(":id")));
-    //   String name = request.queryParams("move");
-    //   List<Move> allMoves = Move.all();
-    //   Move newMove = Move.find(name);
-    //   boolean matchFound = false;
-    //
-    //   for(Move oldMove : allMoves) {
-    //     if (newMove.getName().equals(oldMove.getName())) {
-    //       pokemon.addMove(oldMove);
-    //       matchFound = true;
-    //       break;
-    //     }
-    //   }
-    //
-    //   if (matchFound == false) {
-    //     newMove.save();
-    //     pokemon.addMove(newMove);
-    //   }
-    //
-    //   response.redirect("/pokepage/" + pokemon.getId());
-    //   return null;
-    // });
+    get("/battle", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      pokemon1.hp = 500;
+      pokemon2.hp = 500;
+      model.put("pokemon1", pokemon1);
+      model.put("pokemon2", pokemon2);
+      model.put("template", "templates/battle.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/pokefight/2pturn", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Move move = Move.searchByName(request.queryParams("move")).get(0);
+      move.attack(pokemon2);
+      model.put("pokemon1", pokemon1);
+      model.put("pokemon2", pokemon2);
+      model.put("template", "templates/pokefight2pTurn.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/pokefight/1pturn", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Move move = Move.searchByName(request.queryParams("move")).get(0);
+      move.attack(pokemon1);
+      model.put("pokemon1", pokemon1);
+      model.put("pokemon2", pokemon2);
+      model.put("template", "templates/pokefight1pTurn.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
 
     post("/pokedex/name-search", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();

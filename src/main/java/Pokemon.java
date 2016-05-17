@@ -14,6 +14,7 @@ public class Pokemon {
   private int height;
   private int evolves;
   private boolean mega_evolves;
+  public int hp;
 
   public Pokemon(String name, String type_1, String type_2, String description, double weight, int height, int evolves, boolean mega_evolves) {
     this.name = name;
@@ -28,6 +29,9 @@ public class Pokemon {
 
   public int getId() {
     return id;
+  }
+  public int getHp() {
+    return hp;
   }
   public String getType1() {
     return type_1;

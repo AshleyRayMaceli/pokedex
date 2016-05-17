@@ -90,7 +90,7 @@ public class Move {
       double effectiveness = 1;
       String attackType = this.type;
 
-      for (String type : defenderTypes ) {
+      for (String type : defenderTypes) {
 
         if (attackType.equals("Normal")) {
           if (type.contains("Rock")) {
@@ -222,15 +222,27 @@ public class Move {
       Double damage;
 
       damage = this.getPower();
-      damage = damage * this.effectiveness(defendingPokemon);
       if (this.effectiveness(defendingPokemon) > 1) {
+        defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
         return String.format("The attack is super effective and did %.2f damage", damage);
       } else if (this.effectiveness(defendingPokemon) == 0) {
         return "The attack is ineffective and did 0 damage";
       } else if (this.effectiveness(defendingPokemon) < 1) {
+        defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
         return String.format("The attack is not very effective and did %.2f damage", damage);
       } else {
+        defendingPokemon.hp -= damage;
         return String.format("The attack does %.2f damage", damage);
+      }
+    }
+
+    public static List<Move> searchByName(String name) {
+      name = name.toLowerCase();
+      try(Connection con = DB.sql2o.open()) {
+        String sql = "SELECT * FROM moves WHERE LOWER (name) LIKE :move";
+        return con.createQuery(sql)
+          .addParameter("move", '%' + name + '%')
+          .executeAndFetch(Move.class);
       }
     }
 

@@ -77,4 +77,21 @@ public class PokemonTest {
     myPokemon.save();
     assertEquals(myPokemon, Pokemon.searchByName("squir").get(0));
   }
+
+  @Test
+  public void fighting_damagesDefender() {
+    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false);
+    myPokemon.save();
+    myPokemon.hp = 500;
+    Move myMove = new Move("Bubble", "Water", 50.0, 100);
+    myMove.attack(myPokemon);
+    System.out.println(myPokemon.hp);
+    myMove.attack(myPokemon);
+        System.out.println(myPokemon.hp);
+    myMove.attack(myPokemon);
+        System.out.println(myPokemon.hp);
+    myMove.attack(myPokemon);
+    assertEquals(400, myPokemon.hp);
+  }
+
 }
