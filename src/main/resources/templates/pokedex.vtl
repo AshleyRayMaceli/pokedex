@@ -5,10 +5,16 @@
 </form>
 <br>
 <a href="/" class="btn btn-info">Back To Home</a>
+<br>
 
-#foreach ($pokemon in $pokemons)
-<a href="/pokepage/$pokemon.getId()">$pokemon.getName()
-<br>
-<img src=/${pokemon.getName()}.gif></a>
-<br>
+#if($pokemons.size() > 0)
+  #foreach ($pokemon in $pokemons)
+  <a href="/pokepage/$pokemon.getId()">$pokemon.getName()
+  <br>
+  <img src=/${pokemon.getName()}.gif></a>
+  <br>
+  #end
+#else
+  <h2>No matches for your search results</h2>
+  <h2>Try another search or press the Home button</h2>
 #end

@@ -50,4 +50,18 @@ public class AppTest extends FluentTest {
     assertThat(pageSource().contains("Squirtle"));
   }
 
+  @Test
+  public void searchResultsReturnMatches() {
+    goTo("http://localhost:4567/pokedex");
+    fill("#name").with("char");
+    assertThat(pageSource().contains("Charizard"));
+  }
+
+  @Test
+  public void searchResultsReturnNoMatches() {
+    goTo("http://localhost:4567/pokedex");
+    fill("#name").with("x");
+    assertThat(pageSource().contains("No matches for your search results"));
+  }
+
 }
