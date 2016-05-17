@@ -23,9 +23,24 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  // @Test
-  // public void rootTest() {
-  //
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Pokedex");
+  }
+
+  @Test
+  public void allPokemonPageIsDisplayed() {
+    goTo("http://localhost:4567/");
+    click("a", withText("View the full Pokedex!"));
+    assertThat(pageSource().contains("Ivysaur"));
+    assertThat(pageSource().contains("Charizard"));
+  }
+
+  @Test
+  public void individualPokemonPageIsDisplayed() {
+    goTo("http://localhost:4567/pokepage/6");
+    assertThat(pageSource().contains("Charizard"));
+  }
 
 }
