@@ -3,8 +3,13 @@ body {
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+}
+
+.entry-image {
+  width: 150px;
+  height: 150px;
 }
 
 .glyphicon-triangle-left {

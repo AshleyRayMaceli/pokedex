@@ -2,13 +2,14 @@ pokepage.vtl
 
 <div class="row poke-img">
   <div class="col-md-5 col-md-offset-1 poke-img">
-    <img src=/$pokemon.getImageName()>
+    <img class="entry-image" src=/$pokemon.getImageName()>
   </div>
   <div class="col-md-5 col-md-offset-1 poke-stats">
     <h1>$pokemon.getName() - #$pokemon.getId()</h1>
     <h3>$pokemon.getType1() - $pokemon.getType2()</h3>
     <h3>$pokemon.getWeight() lbs</h3>
     <h3>$pokemon.getHeight() inches</h3>
+    <h3>Evolves At Level $pokemon.getEvolves()</h3>
   </div>
 </div>
 

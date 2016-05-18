@@ -323,6 +323,19 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 108	Normal	None	Lickitung	Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.	144.400000000000006	47	f	0
 109	Poison	None	Koffing	If Koffing becomes agitated, it raises the toxicity of its internal gases and jets them out from all over its body. This Pokémon may also overinflate its round body, then explode.	2.20000000000000018	24	f	35
 110	Poison	None	Weezing	Weezing loves the gases given off by rotted kitchen garbage. This Pokémon will find a dirty, unkempt house and make it its home. At night, when the people in the house are asleep, it will go through the trash.	20.8999999999999986	47	f	0
+111	Ground	Rock	Rhyhorn	Rhyhorn runs in a straight line, smashing everything in its path. It is not bothered even if it rushes headlong into a block of steel. This Pokémon may feel some pain from the collision the next day, however.	253.5	39	f	42
+112	Ground	Rock	Rhydon	Rhydon's horn can crush even uncut diamonds. One sweeping blow of its tail can topple a building. This Pokémon's hide is extremely tough. Even direct cannon hits don't leave a scratch.	264.600000000000023	75	f	0
+113	Normal	None	Chansey	Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite.	76.2999999999999972	43	f	0
+114	Grass	None	Tangela	Tangela's vines snap off easily if they are grabbed. This happens without pain, allowing it to make a quick getaway. The lost vines are replaced by newly grown vines the very next day.	77.2000000000000028	39	f	0
+115	Normal	None	Kangaskhan	If you come across a young Kangaskhan playing by itself, you must never disturb it or attempt to catch it. The baby Pokémon's parent is sure to be in the area, and it will become violently enraged at you.	176.400000000000006	75	t	0
+116	Water	None	Horsea	Horsea eats small insects and moss off of rocks. If the ocean current turns fast, this Pokémon anchors itself by wrapping its tail around rocks or coral to prevent being washed away.	17.6000000000000014	16	f	32
+117	Water	None	Seadra	Seadra sleeps after wriggling itself between the branches of coral. Those trying to harvest coral are occasionally stung by this Pokémon's poison barbs if they fail to notice it.	55.1000000000000014	47	f	0
+118	Water	None	Goldeen	Goldeen is a very beautiful Pokémon with fins that billow elegantly in water. However, don't let your guard down around this Pokémon—it could ram you powerfully with its horn.	33.1000000000000014	24	f	33
+119	Water	None	Seaking	In the autumn, Seaking males can be seen performing courtship dances in riverbeds to woo females. During this season, this Pokémon's body coloration is at its most beautiful.	86	51	f	0
+120	Water	None	Staryu	Staryu's center section has an organ called the core that shines bright red. If you go to a beach toward the end of summer, the glowing cores of these Pokémon look like the stars in the sky.	76.0999999999999943	31	f	0
+121	Water	Psychic	Starmie	Starmie's center section—the core—glows brightly in seven colors. Because of its luminous nature, this Pokémon has been given the nickname “the gem of the sea."	176.400000000000006	43	f	0
+123	Bug	Flying	Scyther	Scyther is blindingly fast. Its blazing speed enhances the effectiveness of the twin scythes on its forearms. This Pokémon's scythes are so effective, they can slice through thick logs in one wicked stroke.	123.5	59	f	0
+122	Psychic	None	Mr.Mime	Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists. Once the watchers are convinced, the unseeable thing exists as if it were real.	120.099999999999994	51	f	0
 \.
 
 
@@ -330,7 +343,7 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 -- Name: pokemons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('pokemons_id_seq', 110, true);
+SELECT pg_catalog.setval('pokemons_id_seq', 123, true);
 
 
 --
