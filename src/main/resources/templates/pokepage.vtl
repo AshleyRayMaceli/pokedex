@@ -1,33 +1,43 @@
-pokepage.vtl
+<h1 class = "number">#$pokemon.getId()</h1>
+<h1 class = "name">$pokemon.getName()</h1>
 
-<div class="row poke-img">
-  <div class="col-md-5 col-md-offset-1 poke-img">
+<div class="row">
+  <div class="col-md-5 poke-img">
     <img class="entry-image" src=/pokemon/$pokemon.getImageName()>
   </div>
-  <div class="col-md-5 col-md-offset-1 poke-stats">
-    <h1>$pokemon.getName() - #$pokemon.getId()</h1>
+
+  <div class="col-md-2">
+  </div>
+
+  <div class="col-md-5 poke-stats">
+    <br>
+    <br>
+  #if ($pokemon.getType2().equals("None"))
+    <h3>$pokemon.getType1()</h3>
+  #else
     <h3>$pokemon.getType1() - $pokemon.getType2()</h3>
-    <h3>$pokemon.getWeight() lbs</h3>
-    <h3>$pokemon.getHeight() inches</h3>
-    #if ($pokemon.getEvolves() == 0)
-      <h3>Does Not Evolve</h3>
-    #elseif ($pokemon.getEvolves() == 999)
-      <h3>Evolves via Trade</h3>
-    #elseif ($pokemon.getEvolves() == 998)
-      <h3>Evolves via Various Stones</h3>
-    #elseif ($pokemon.getEvolves() == 997)
-      <h3>Evolves via Thunderstone</h3>
-    #elseif ($pokemon.getEvolves() == 996)
-      <h3>Evolves via Moonstone</h3>
-    #elseif ($pokemon.getEvolves() == 995)
-      <h3>Evolves via Firestone</h3>
-    #elseif ($pokemon.getEvolves() == 994)
-      <h3>Evolves via Leafstone</h3>
-    #elseif ($pokemon.getEvolves() == 993)
-      <h3>Evolves via Waterstone</h3>
-    #else
-      <h3>Evolves At Level $pokemon.getEvolves()</h3>
-    #end
+  #end
+  <h3>$pokemon.getWeight() lbs</h3>
+  <h3>$pokemon.getHeight() inches</h3>
+  #if ($pokemon.getEvolves() == 0)
+    <h3>Does Not Evolve</h3>
+  #elseif ($pokemon.getEvolves() == 999)
+    <h3>Evolves via Trade</h3>
+  #elseif ($pokemon.getEvolves() == 998)
+    <h3>Evolves via Various Stones</h3>
+  #elseif ($pokemon.getEvolves() == 997)
+    <h3>Evolves via Thunderstone</h3>
+  #elseif ($pokemon.getEvolves() == 996)
+    <h3>Evolves via Moonstone</h3>
+  #elseif ($pokemon.getEvolves() == 995)
+    <h3>Evolves via Firestone</h3>
+  #elseif ($pokemon.getEvolves() == 994)
+    <h3>Evolves via Leafstone</h3>
+  #elseif ($pokemon.getEvolves() == 993)
+    <h3>Evolves via Waterstone</h3>
+  #else
+    <h3>Evolves At Level $pokemon.getEvolves()</h3>
+  #end
   </div>
 </div>
 

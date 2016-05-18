@@ -27,11 +27,6 @@ select {
   font-size: 30pt;
 }
 
-.entry-image {
-  width: 150px;
-  height: 150px;
-}
-
 .glyphicon-triangle-left {
   float: left;
 }
@@ -129,3 +124,32 @@ select {
 
 .formstyles {
 }
+
+/*Pokepage.vtl starts*/
+.poke-description {
+  font-size: 20pt;
+  margin-top: 30px;
+}
+
+.poke-attacks {
+  font-size: 20pt;
+}
+
+.entry-image {
+  width: 150px;
+  height: 150px;
+  margin-top: 80px;
+}
+
+.poke-img {
+  min-height: 300px;
+  border-radius: 25px;
+  background-color: grey;
+}
+
+.poke-stats {
+  min-height: 300px;
+  border-radius: 25px;
+  background-color: grey;
+}
+/*Pokepage.vtl ends*/
