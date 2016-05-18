@@ -42,15 +42,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/pokepage/:id/move/new", (request, response) -> {
-      Pokemon pokemon = Pokemon.find(Integer.parseInt(request.params("id")));
-      Integer moveDropDownResult = Integer.parseInt(request.queryParams("moveId"));
-      Move move = Move.find(moveDropDownResult);
-      pokemon.addMove(move);
-      response.redirect("/pokepage/" + pokemon.getId());
-      return null;
-    });
-
     get("/battle", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
@@ -78,6 +69,7 @@ public class App {
     post("/player2Selection", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String pokemon2 = request.queryParams("player2Pokemon");
+      Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       Pokemon player2Pokemon;
       if (Pokemon.searchByName(pokemon2).size() > 0) {
         player2Pokemon = Pokemon.searchByName(pokemon2).get(0);
@@ -87,6 +79,7 @@ public class App {
       player2Pokemon.hp = 500;
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
       request.session().attribute("player2Pokemon", player2Pokemon);
+      model.put("moves", player1Pokemon.getMoves());
       model.put("player2Pokemon", player2Pokemon);
       model.put("template", "templates/pokefight1pTurn.vtl");
       return new ModelAndView(model, layout);
@@ -95,8 +88,11 @@ public class App {
     post("/pokefight/2pturn", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Move move = Move.searchByName(request.queryParams("move")).get(0);
+      Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
+      Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
       model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
+      model.put("moves", player2Pokemon.getMoves());
       move.attack(request.session().attribute("player2Pokemon"));
       model.put("template", "templates/pokefight2pTurn.vtl");
       return new ModelAndView(model, layout);
@@ -105,8 +101,11 @@ public class App {
     post("/pokefight/1pturn", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Move move = Move.searchByName(request.queryParams("move")).get(0);
+      Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
+      Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
       model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
+      model.put("moves", player1Pokemon.getMoves());
       move.attack(request.session().attribute("player1Pokemon"));
       model.put("template", "templates/pokefight1pTurn.vtl");
       return new ModelAndView(model, layout);
@@ -115,6 +114,7 @@ public class App {
     post("/pokefight/player1Change", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String player1Change = request.queryParams("player1Change");
+      Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
       Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       int hp = player1Pokemon.hp;
       if (Pokemon.searchByName(player1Change).size() > 0) {
@@ -126,6 +126,7 @@ public class App {
       request.session().attribute("player1Pokemon", player1Pokemon);
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
       model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
+      model.put("moves", player2Pokemon.getMoves());
       model.put("switched", true);
       model.put("template", "templates/pokefight2pTurn.vtl");
       return new ModelAndView(model, layout);
@@ -134,6 +135,7 @@ public class App {
     post("/pokefight/player2Change", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String player2Change = request.queryParams("player2Change");
+      Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
       int hp = player2Pokemon.hp;
       if (Pokemon.searchByName(player2Change).size() > 0) {
@@ -145,6 +147,7 @@ public class App {
       request.session().attribute("player2Pokemon", player2Pokemon);
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
       model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
+      model.put("moves", player1Pokemon.getMoves());
       model.put("switched", true);
       model.put("template", "templates/pokefight1pTurn.vtl");
       return new ModelAndView(model, layout);

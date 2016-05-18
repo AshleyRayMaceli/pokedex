@@ -46,18 +46,6 @@ pokepage.vtl
     #end
   </div>
 
-  <form action="/pokepage/$pokemon.getId()/move/new" method="post">
-    <select multiple id='moveId' name='moveId' type='text'>
-      <option value=0 selected>All Moves</option>
-      #foreach($move in $moves)
-      <option value=$move.getId()>$move.getName()</option>
-      #end
-    </select>
-
-  <button type="submit" class="btn btn-warning" id="moveSubmit">Add Move</button>
-  </form>
-
-
 </div>
 <div class= "row home">
   #if ($pokemon.getId() == 1)

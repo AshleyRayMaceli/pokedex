@@ -7,6 +7,12 @@ img {
   height: 75px;
 }
 
+select {
+  width: 400px;
+  height: 400px;
+  font-size: 30pt;
+}
+
 .entry-image {
   width: 150px;
   height: 150px;

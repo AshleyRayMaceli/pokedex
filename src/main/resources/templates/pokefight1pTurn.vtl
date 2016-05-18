@@ -14,9 +14,16 @@ $player2Pokemon.getName() has $player2Pokemon.getHp() hp left!
 $player1Pokemon.getName() select your move!
 
 <form action="/pokefight/2pturn" method="post">
-  <label for="move">Fire Spin!</label>
-  <input id="move" name="move" type="hidden" value="Fire Spin">
-  <button type="submit" class="btn btn-success">Flame on!</button>
+
+  <select name="move" id="move">
+  #foreach ($move in $moves)
+    <option value="$move.getName()">$move.getName()</option>
+    <!-- <label for="move">$move.getName()</label>
+    <input id="move" name="move" type="hidden" value=$move.getname()> -->
+  #end
+  </select>
+  <br>
+  <button type="submit" class="btn btn-success">Attack!</button>
 </form>
 
 <form action="/pokefight/player1Change" method="post">
