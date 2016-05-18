@@ -1,13 +1,27 @@
-$pokemon1.getName() has $pokemon1.getHp() hp left!
+#if ($switched)
 
-$pokemon2.getName() has $pokemon2.getHp() hp left!
+Player 1 has switched their pokemon, you don't know what it is yet but you can hit it as it comes out of its ball! It has $player1Pokemon.getHp() hp left!
 
-$pokemon2.getName() select your move!
+#else
+$player1Pokemon.getName() has $player1Pokemon.getHp() hp left!
+#end
+
+$player2Pokemon.getName() has $player2Pokemon.getHp() hp left!
+
+
+
+$player2Pokemon.getName() select your move!
 
 <form action="/pokefight/1pturn" method="post">
   <label for="move">Hydro Pump!</label>
   <input id="move" name="move" type="hidden" value="Hydro Pump">
   <button type="submit" class="btn btn-success">Fight fire with water!</button>
+</form>
+
+<form action="/pokefight/player2Change" method="post">
+  <label for="player2Change">Player 2, swap your pokemon!</label>
+  <input id="player2Change" name="player2Change" type="text" required>
+  <button type="submit" class="btn btn-success">Redeploy!</button>
 </form>
 
 

@@ -1,0 +1,15 @@
+#if ($pokemon2)
+
+  $pokemon2
+
+#else
+  <form action="/player2Selection" method="post">
+    <label for="player2Pokemon">Player 2, select your pokemon:</label>
+    <input id="player2Pokemon" name="player2Pokemon" type="text" required>
+    <button type="submit" class="btn btn-success">Search Pokemon</button>
+  </form>
+#end
+
+<br>
+<a href="/" class="btn btn-info">Back To Home</a>
+<br>
