@@ -278,6 +278,51 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 63	Psychic	None	Abra	Abra sleeps for eighteen hours a day. However, it can sense the presence of foes even while it is sleeping. In such a situation, this Pokémon immediately teleports to safety.	43	35	f	16
 64	Psychic	None	Kadabra	Kadabra emits a peculiar alpha wave if it develops a headache. Only those people with a particularly strong psyche can hope to become a Trainer of this Pokémon.	124.599999999999994	51	f	0
 65	Psychic	None	Alakazam	Alakazam's brain continually grows, making its head far too heavy to support with its neck. This Pokémon holds its head up using its psychokinetic power instead.	105.799999999999997	59	t	0
+66	FIghting	None	Machop	Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans.	43	31	f	28
+67	Fighting	None	Machoke	Machoke's thoroughly toned muscles possess the hardness of steel. This Pokémon has so much strength, it can easily hold aloft a sumo wrestler on just one finger.	155.400000000000006	59	f	0
+68	Fighting	None	Machamp	Machamp has the power to hurl anything aside. However, trying to do any work requiring care and dexterity causes its arms to get tangled. This Pokémon tends to leap into action before it thinks.	286.600000000000023	63	f	0
+69	Grass	Poison	Bellsprout	Bellsprout's thin and flexible body lets it bend and sway to avoid any attack, however strong it may be. From its mouth, this Pokémon spits a corrosive fluid that melts even iron.	8.80000000000000071	28	f	21
+70	Grass	Poison	Weepinbell	Weepinbell has a large hook on its rear end. At night, the Pokémon hooks on to a tree branch and goes to sleep. If it moves around in its sleep, it may wake up to find itself on the ground.	14.0999999999999996	39	f	0
+71	Grass	Poison	Victreebel	Victreebel has a long vine that extends from its head. This vine is waved and flicked about as if it were an animal to attract prey. When an unsuspecting prey draws near, this Pokémon swallows it whole.	34.2000000000000028	67	f	0
+72	Water	Poison	Tentacool	Tentacool's body is largely composed of water. If it is removed from the sea, it dries up like parchment. If this Pokémon happens to become dehydrated, put it back into the sea.	100.299999999999997	35	f	30
+73	Water	Poison	Tentacruel	Tentacruel has large red orbs on its head. The orbs glow before lashing the vicinity with a harsh ultrasonic blast. This Pokémon's outburst creates rough waves around it.	121.299999999999997	63	f	0
+74	Rock	Ground	Geodude	The longer a Geodude lives, the more its edges are chipped and worn away, making it more rounded in appearance. However, this Pokémon's heart will remain hard, craggy, and rough always.	44.1000000000000014	16	f	25
+75	Rock	Ground	Graveler	Graveler grows by feeding on rocks. Apparently, it prefers to eat rocks that are covered in moss. This Pokémon eats its way through a ton of rocks on a daily basis.	231.5	39	f	0
+76	Rock	Ground	Golem	Golem live up on mountains. If there is a large earthquake, these Pokémon will come rolling down off the mountains en masse to the foothills below.	661.399999999999977	55	f	0
+77	Fire	None	Ponyta	Ponyta is very weak at birth. It can barely stand up. This Pokémon becomes stronger by stumbling and falling to keep up with its parent.	66.0999999999999943	39	f	40
+78	Fire	None	Rapidash	Rapidash usually can be seen casually cantering in the fields and plains. However, when this Pokémon turns serious, its fiery manes flare and blaze as it gallops its way up to 150 mph.	209.400000000000006	67	f	0
+79	Water	Psychic	Slowpoke	Slowpoke uses its tail to catch prey by dipping it in water at the side of a river. However, this Pokémon often forgets what it's doing and often spends entire days just loafing at water's edge.	79.4000000000000057	47	f	37
+80	Water	Psychic	Slowbro	Slowbro's tail has a Shellder firmly attached with a bite. As a result, the tail can't be used for fishing anymore. This causes Slowbro to grudgingly swim and catch prey instead.	173.099999999999994	63	t	0
+81	Electric	None	Magnemite	Magnemite attaches itself to power lines to feed on electricity. If your house has a power outage, check your circuit breakers. You may find a large number of this Pokémon clinging to the breaker box.	13.1999999999999993	12	f	30
+82	Electric	None	Magneton	Magneton emits a powerful magnetic force that is fatal to mechanical devices. As a result, large cities sound sirens to warn citizens of large-scale outbreaks of this Pokémon.	132.300000000000011	39	f	0
+83	Normal	Flying	Farfetch'd	Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.	33.1000000000000014	31	f	0
+84	Normal	Flying	Doduo	Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.	86.4000000000000057	55	f	31
+85	Normal	Flying	Dodrio	Watch out if Dodrio's three heads are looking in three separate directions. It's a sure sign that it is on its guard. Don't go near this Pokémon if it's being wary—it may decide to peck you.	187.800000000000011	71	f	0
+86	Water	None	Seel	Seel hunts for prey in the frigid sea underneath sheets of ice. When it needs to breathe, it punches a hole through the ice with the sharply protruding section of its head.	198.400000000000006	43	f	34
+87	Water	Ice	Dewgong	Dewgong loves to snooze on bitterly cold ice. The sight of this Pokémon sleeping on a glacier was mistakenly thought to be a mermaid by a mariner long ago.	264.600000000000023	67	f	0
+88	Poison	None	Grimer	Grimer's sludgy and rubbery body can be forced through any opening, however small it may be. This Pokémon enters sewer pipes to drink filthy wastewater.	66.0999999999999943	35	f	38
+89	Poison	None	Muk	From Muk's body seeps a foul fluid that gives off a nose-bendingly horrible stench. Just one drop of this Pokémon's body fluid can turn a pool stagnant and rancid.	66.0999999999999943	47	f	0
+90	Water	None	Shellder	At night, this Pokémon uses its broad tongue to burrow a hole in the seafloor sand and then sleep in it. While it is sleeping, Shellder closes its shell, but leaves its tongue hanging out.	8.80000000000000071	12	f	0
+91	Water	Ice	Cloyster	Cloyster is capable of swimming in the sea. It does so by swallowing water, then jetting it out toward the rear. This Pokémon shoots spikes from its shell using the same system.	292.100000000000023	59	f	0
+92	Ghost	Poison	Gastly	Gastly is largely composed of gaseous matter. When exposed to a strong wind, the gaseous body quickly dwindles away. Groups of this Pokémon cluster under the eaves of houses to escape the ravages of wind.	0.200000000000000011	51	f	25
+93	Ghost	Poison	Haunter	Haunter is a dangerous Pokémon. If one beckons you while floating in darkness, you must never approach it. This Pokémon will try to lick you with its tongue and steal your life away.	0.200000000000000011	63	f	0
+94	Ghost	Poison	Gengar	Sometimes, on a dark night, your shadow thrown by a streetlight will suddenly and startlingly overtake you. It is actually a Gengar running past you, pretending to be your shadow.	89.2999999999999972	59	t	0
+95	Rock	Ground	Onix	Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother.	463	346	f	0
+96	Psychic	None	Drowzee	If your nose becomes itchy while you are sleeping, it's a sure sign that one of these Pokémon is standing above your pillow and trying to eat your dream through your nostrils.	71.4000000000000057	39	f	26
+97	Psychic	None	Hypno	Hypno holds a pendulum in its hand. The arcing movement and glitter of the pendulum lull the foe into a deep state of hypnosis. While this Pokémon searches for prey, it polishes the pendulum.	166.699999999999989	63	f	0
+98	Water	None	Krabby	Krabby live on beaches, burrowed inside holes dug into the sand. On sandy beaches with little in the way of food, these Pokémon can be seen squabbling with each other over territory.	14.3000000000000007	16	f	28
+99	Water	None	Kingler	Kingler has an enormous, oversized claw. It waves this huge claw in the air to communicate with others. However, because the claw is so heavy, the Pokémon quickly tires.	132.300000000000011	51	f	0
+100	Electric	None	Voltorb	Voltorb was first sighted at a company that manufactures Poké Balls. The link between that sighting and the fact that this Pokémon looks very similar to a Poké Ball remains a mystery.	22.8999999999999986	20	f	30
+101	Electric	None	Electrode	Electrode eats electricity in the atmosphere. On days when lightning strikes, you can see this Pokémon exploding all over the place from eating too much electricity.	146.800000000000011	47	f	0
+102	Grass	Psychic	Exeggcute	This Pokémon consists of six eggs that form a closely knit cluster. The six eggs attract each other and spin around. When cracks increasingly appear on the eggs, Exeggcute is close to evolution.	5.5	16	f	0
+103	Grass	Psychic	Exeggutor	Exeggutor originally came from the tropics. Its heads steadily grow larger from exposure to strong sunlight. It is said that when the heads fall off, they group together to form Exeggcute.	264.600000000000023	79	f	0
+104	Ground	None	Cubone	Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull the Pokémon wears are made by the tears it sheds.	14.3000000000000007	16	f	28
+105	Ground	None	Marowak	Marowak is the evolved form of a Cubone that has overcome its sadness at the loss of its mother and grown tough. This Pokémon's tempered and hardened spirit is not easily broken.	99.2000000000000028	39	f	0
+106	Fighting	None	Hitmonlee	Hitmonlee's legs freely contract and stretch. Using these springlike legs, it bowls over foes with devastating kicks. After battle, it rubs down its legs and loosens the muscles to overcome fatigue.	109.799999999999997	59	f	0
+107	Fighting	None	Hitmonchan	Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. This Pokémon has an indomitable spirit and will never give up in the face of adversity.	110.700000000000003	55	f	0
+108	Normal	None	Lickitung	Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.	144.400000000000006	47	f	0
+109	Poison	None	Koffing	If Koffing becomes agitated, it raises the toxicity of its internal gases and jets them out from all over its body. This Pokémon may also overinflate its round body, then explode.	2.20000000000000018	24	f	35
+110	Poison	None	Weezing	Weezing loves the gases given off by rotted kitchen garbage. This Pokémon will find a dirty, unkempt house and make it its home. At night, when the people in the house are asleep, it will go through the trash.	20.8999999999999986	47	f	0
 \.
 
 
@@ -285,7 +330,7 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 -- Name: pokemons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('pokemons_id_seq', 65, true);
+SELECT pg_catalog.setval('pokemons_id_seq', 110, true);
 
 
 --
