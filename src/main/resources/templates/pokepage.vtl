@@ -2,7 +2,7 @@ pokepage.vtl
 
 <div class="row poke-img">
   <div class="col-md-5 col-md-offset-1 poke-img">
-    <img class="entry-image" src=/$pokemon.getImageName()>
+    <img class="entry-image" src=/pokemon/$pokemon.getImageName()>
   </div>
   <div class="col-md-5 col-md-offset-1 poke-stats">
     <h1>$pokemon.getName() - #$pokemon.getId()</h1>
@@ -47,10 +47,15 @@ pokepage.vtl
   </div>
 
   <form action="/pokepage/$pokemon.getId()/move/new" method="post">
-  <input id="move" name="move" type="text" required>
+    <select multiple id='moveId' name='moveId' type='text'>
+      <option value=0 selected>All Moves</option>
+      #foreach($move in $moves)
+      <option value=$move.getId()>$move.getName()</option>
+      #end
+    </select>
 
   <button type="submit" class="btn btn-warning" id="moveSubmit">Add Move</button>
-</form>
+  </form>
 
 
 </div>

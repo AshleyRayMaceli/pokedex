@@ -37,13 +37,13 @@ img {
 
 .pokeball {
   font-size: 3em;
-  color: #4d004d;
-  margin-top: 10px;
   height: 220px;
   width: 220px;
   border-radius: 50%;
   background-image: url(/dexball.png);
   background-size: 100% 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #battle {
