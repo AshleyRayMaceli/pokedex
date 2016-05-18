@@ -32,7 +32,7 @@ public class AppTest extends FluentTest {
   @Test
   public void allPokemonPageIsDisplayed() {
     goTo("http://localhost:4567/");
-    click("a", withText("View the full Pokedex!"));
+    click("#viewDex");
     assertThat(pageSource().contains("Ivysaur"));
     assertThat(pageSource().contains("Charizard"));
   }

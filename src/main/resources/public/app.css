@@ -1,10 +1,24 @@
 body {
+  font-family: 'Exo', sans-serif;
   text-align: center;
 }
 
 img {
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
+}
+
+a:hover {
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.title {
+  text-align: center;
+  width: 90%;
+  height: 90%;
+  margin-left: 2%;
+  font-size: 36pt;
 }
 
 select {
@@ -36,13 +50,17 @@ select {
   margin-bottom: 30px;
 }
 
-.pokeballs {
+.dexball {
+  background-color: #ff9b9b;
   border-radius: 25px;
-  background-color: gray;
 }
 
-.pokeball {
-  font-size: 3em;
+.battleball {
+  background-color: #a8c0fc;
+  border-radius: 25px;
+}
+
+.pokeball-dex {
   height: 220px;
   width: 220px;
   border-radius: 50%;
@@ -52,6 +70,44 @@ select {
   margin-bottom: 20px;
 }
 
-#battle {
+.pokeball-dex:hover {
+  opacity: 0.4;
+}
+
+.pokeball-battle {
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
   background-image: url(/battleball.png);
+  background-size: 100% 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pokeball-battle:hover {
+  opacity: 0.4;
+}
+
+.dexball-label {
+  font-size: 36pt;
+  background-color: #ff9b9b;
+  border-radius: 25px;
+}
+
+.battleball-label {
+  font-size: 36pt;
+  background-color: #a8c0fc;
+  border-radius: 25px;
+}
+
+.footer {
+  background-color: lightgrey;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 0px;
+  margin-bottom: 3px;
+}
+
+.credits {
+  margin-top: 10px;
 }
