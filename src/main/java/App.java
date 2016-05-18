@@ -24,23 +24,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/pokedex/new", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      String name = request.queryParams("newPokemonName");
-      String description = request.queryParams("newPokemonDescription");
-      String type1 = request.queryParams("newPokemonType1");
-      String type2 = request.queryParams("newPokemonType2");
-      double weight = Double.parseDouble(request.queryParams("newPokemonWeight"));
-      int height = Integer.parseInt(request.queryParams("newPokemonHeight"));
-      int evolves = Integer.parseInt(request.queryParams("newPokemonEvolves"));
-      Boolean mega_evolves = Boolean.parseBoolean(request.queryParams("newPokemonMegaEvolves"));
-      Pokemon newPokemon = new Pokemon (name, type1, type2, description, weight, height, evolves, mega_evolves);
-      newPokemon.save();
-      model.put("pokemons", Pokemon.all());
-      model.put("template", "templates/pokedex.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
     post("/pokedex/name-search", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("name");
@@ -53,10 +36,20 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Pokemon pokemon = Pokemon.find(Integer.parseInt(request.params("id")));
       model.put("pokemons", Pokemon.all());
+      model.put("moves", Move.all());
       model.put("pokemon", pokemon);
       model.put("template", "templates/pokepage.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/pokepage/:id/move/new", (request, response) -> {
+      Pokemon pokemon = Pokemon.find(Integer.parseInt(request.params("id")));
+      Integer moveDropDownResult = Integer.parseInt(request.queryParams("moveId"));
+      Move move = Move.find(moveDropDownResult);
+      pokemon.addMove(move);
+      response.redirect("/pokepage/" + pokemon.getId());
+      return null;
+    });
 
     get("/battle", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
