@@ -111,3 +111,13 @@ select {
 .credits {
   margin-top: 10px;
 }
+
+.battleImg {
+  background-image: url(pokebattle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+.formstyles {
+}
