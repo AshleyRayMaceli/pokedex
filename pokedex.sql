@@ -336,6 +336,34 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 58	Fire	None	Growlithe	Growlithe has a superb sense of smell. Once it smells anything, this Pokémon won't forget the scent, no matter what. It uses its advanced olfactory sense to determine the emotions of other living things.	41.8999999999999986	28	f	995
 90	Water	None	Shellder	At night, this Pokémon uses its broad tongue to burrow a hole in the seafloor sand and then sleep in it. While it is sleeping, Shellder closes its shell, but leaves its tongue hanging out.	8.80000000000000071	12	f	993
 120	Water	None	Staryu	Staryu's center section has an organ called the core that shines bright red. If you go to a beach toward the end of summer, the glowing cores of these Pokémon look like the stars in the sky.	76.0999999999999943	31	f	993
+124	Ice	Psychic	Jynx	Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.	89.5	31	f	0
+125	Electric	None	Electabuzz	When a storm arrives, gangs of this Pokémon compete with each other to scale heights that are likely to be stricken by lightning bolts. Some towns use Electabuzz in place of lightning rods.	66.0999999999999943	43	f	0
+126	Fire	None	Magmar	In battle, Magmar blows out intensely hot flames from all over its body to intimidate its opponent. This Pokémon's fiery bursts create heat waves that ignite grass and trees in its surroundings.	98.0999999999999943	51	f	0
+127	Bug	None	Pinsir	Pinsir is astoundingly strong. It can grip a foe weighing twice its weight in its horns and easily lift it. This Pokémon's movements turn sluggish in cold places.	121.299999999999997	59	t	0
+128	Normal	None	Tauros	This Pokémon is not satisfied unless it is rampaging at all times. If there is no opponent for Tauros to battle, it will charge at thick trees and knock them down to calm itself.	194.900000000000006	55	f	0
+129	Water	None	Magikarp	Magikarp is a pathetic excuse for a Pokémon that is only capable of flopping and splashing. This behavior prompted scientists to undertake research into it.	22	35	f	20
+130	Water	Flying	Gyarados	When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature.	518.100000000000023	256	t	0
+131	Water	Ice	Lapras	People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.	485	98	f	0
+132	Normal	None	Ditto	Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.	8.80000000000000071	12	f	0
+133	Normal	None	Eevee	Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.	14.3000000000000007	12	f	998
+134	Water	None	Vaporeon	Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to freely control water.	63.8999999999999986	39	f	0
+135	Electric	None	Jolteon	Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.	54	31	f	0
+136	Fire	None	Flareon	Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot. This Pokémon's body temperature can rise to a maximum of 1,650 degrees Fahrenheit.	55.1000000000000014	35	f	0
+137	Normal	None	Porygon	Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy protected so it cannot be duplicated by copying.	80.5	31	f	0
+138	Rock	Water	Omanyte	Omanyte is one of the ancient and long-since-extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws itself inside its hard shell.	16.5	16	f	40
+139	Rock	Water	Omastar	Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, causing its movements to become too slow and ponderous.	77.2000000000000028	39	f	0
+140	Rock	Water	Kabuto	Kabuto is a Pokémon that has been regenerated from a fossil. However, in extremely rare cases, living examples have been discovered. The Pokémon has not changed at all for 300 million years.	25.3999999999999986	20	f	40
+141	Rock	Water	Kabutops	Kabutops swam underwater to hunt for its prey in ancient times. The Pokémon was apparently evolving from being a water dweller to living on land as evident from the beginnings of change in its gills and legs.	89.2999999999999972	51	f	0
+142	Rock	Flying	Aerodactyl	Aerodactyl is a Pokémon from the age of dinosaurs. It was regenerated from genetic material extracted from amber. It is imagined to have been the king of the skies in ancient times.	130.099999999999994	71	t	0
+143	Normal	None	Snorlax	Snorlax's typical day consists of nothing more than eating and sleeping. It is such a docile Pokémon that there are children who use its expansive belly as a place to play.	1014.10000000000002	83	f	0
+144	Ice	Flying	Articuno	Articuno is a legendary bird Pokémon that can control ice. The flapping of its wings chills the air. As a result, it is said that when this Pokémon flies, snow will fall.	122.099999999999994	67	f	0
+145	Electric	Flying	Zapdos	Zapdos is a legendary bird Pokémon that has the ability to control electricity. It usually lives in thunderclouds. The Pokémon gains power if it is stricken by lightning bolts.	116	63	f	0
+146	Fire	Flying	Moltres	Moltres is a legendary bird Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.	132.300000000000011	79	f	0
+147	Dragon	None	Dratini	Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels.	7.29999999999999982	71	f	30
+148	Dragon	None	Dragonair	Dragonair stores an enormous amount of energy inside its body. It is said to alter weather conditions in its vicinity by discharging energy from the crystals on its neck and tail.	36.3999999999999986	157	f	55
+149	Dragon	Flying	Dragonite	Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.	463	87	f	0
+150	Psychic	None	Mewtwo	Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.	269	79	t	0
+151	Psychic	None	Mew	Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.	8.80000000000000071	16	f	0
 \.
 
 
@@ -343,7 +371,7 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 -- Name: pokemons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('pokemons_id_seq', 123, true);
+SELECT pg_catalog.setval('pokemons_id_seq', 151, true);
 
 
 --
