@@ -19,3 +19,8 @@ img {
   font-size: 40pt;
   display: block;
 }
+
+.home {
+  display: block;
+  margin-bottom: 30px;
+}

@@ -24,12 +24,13 @@
   <button type="submit" class="btn btn-success">List my ideal enemies!</button>
 </form>
 
+<div class="row">
 #if($pokemons.size() > 0)
   #foreach ($pokemon in $pokemons)
   <div class ="col-md-3 pokebox">
   <a href="/pokepage/$pokemon.getId()">#$pokemon.getId() - $pokemon.getName()
   <br>
-  <img src=/${pokemon.getName()}.gif></a>
+  <img src=/${pokemon.getName()}.gif></a></li>
   <br>
   </div>
   #end
@@ -37,7 +38,10 @@
   <h2>No matches for your search results</h2>
   <h2>Try another search or press the Home button</h2>
 #end
+</div>
 
+<div class="row">
 <br>
-<a href="/" class="btn btn-info">Back To Home</a>
+<a href="/" class="btn btn-info home">Back To Home</a>
 <br>
+</div>
