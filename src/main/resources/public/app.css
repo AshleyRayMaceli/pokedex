@@ -113,7 +113,15 @@ select {
 }
 
 .battleImg {
-  background-image: url(pokebattle.jpg);
+  background-image: url(battleImg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  color: white;
+}
+
+.battleImg2 {
+  background-image: url(battleImg2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;

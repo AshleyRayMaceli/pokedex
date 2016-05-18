@@ -221,18 +221,22 @@ public class Move {
     public String attack(Pokemon defendingPokemon) {
       Double damage;
 
-      damage = this.getPower();
-      if (this.effectiveness(defendingPokemon) > 1) {
-        defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
-        return String.format("The attack is super effective and did %.2f damage", damage);
-      } else if (this.effectiveness(defendingPokemon) == 0) {
-        return "The attack is ineffective and did 0 damage";
-      } else if (this.effectiveness(defendingPokemon) < 1) {
-        defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
-        return String.format("The attack is not very effective and did %.2f damage", damage);
+      if (this.hitCalculator()) {
+        damage = this.getPower();
+        if (this.effectiveness(defendingPokemon) > 1) {
+          defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
+          return String.format("The attack is super effective and did %.2f damage", damage);
+        } else if (this.effectiveness(defendingPokemon) == 0) {
+          return "The attack is ineffective and did 0 damage";
+        } else if (this.effectiveness(defendingPokemon) < 1) {
+          defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
+          return String.format("The attack is not very effective and did %.2f damage", damage);
+        } else {
+          defendingPokemon.hp -= damage;
+          return String.format("The attack does %.2f damage", damage);
+        }
       } else {
-        defendingPokemon.hp -= damage;
-        return String.format("The attack does %.2f damage", damage);
+        return "The attack misses and did 0 damage";
       }
     }
 
