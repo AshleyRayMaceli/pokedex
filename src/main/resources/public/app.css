@@ -149,7 +149,6 @@ select {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
-  color: white;
 }
 
 .battleImg2 {
@@ -160,6 +159,7 @@ select {
 }
 
 .formstyles {
+  text-align: center;
 }
 
 .top-center input {
@@ -209,8 +209,9 @@ select {
 }
 
 .pokebox:hover {
-  background-color: black;
+  background-color: grey;
   color: white;
+  border: solid gray 3px;
 }
 
 /*Pokepage.vtl starts*/
@@ -341,6 +342,15 @@ select {
 #defender {
   position: absolute;
   -webkit-animation: mymove 1s;
+}
+
+#player1Pokemon {
+  color: black;
+  font-size: 20pt;
+}
+
+.choosePokemon {
+  font-size: 20pt;
 }
 
 @-webkit-keyframes mymove {
