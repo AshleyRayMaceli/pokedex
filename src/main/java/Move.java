@@ -261,4 +261,19 @@ public class Move {
       }
     }
 
+    public List<Pokemon> getPokemons() {
+      try(Connection con = DB.sql2o.open()) {
+        String joinQuery = "SELECT pokemons.* FROM moves " +
+        "JOIN moves_pokemons ON (moves.id = moves_pokemons.move_id) " +
+        "JOIN pokemons ON (moves_pokemons.pokemon_id = pokemons.id) " +
+        "WHERE moves.id = :move_id";
+
+        List<Pokemon> pokemons = con.createQuery(joinQuery)
+          .addParameter("move_id", this.getId())
+          .executeAndFetch(Pokemon.class);
+
+        return pokemons;
+      }
+    }
+
   }

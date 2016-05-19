@@ -1,23 +1,92 @@
-<form action="/pokedex/name-search" method="post">
-  <label for="name">Search Pok&eacute;mon by Name:</label>
-  <input id="name" name="name" type="text" required>
-  <button type="submit" class="btn btn-success">Search Pok&eacute;mon</button>
-</form>
+<body class="pokedex-background">
+<div class="row filters">
+  <div class="col-md-4">
+    <form action="/pokedex/move-search" method="post">
+    <h2 class="heading">Search By Move</h2>
+      <select multiple id='moveId' name='moveId' type='text'>
+        <option value=0 selected>All Pokemon</option>
+        #foreach($move in $moves)
+          <option value=$move.getId()>$move.getName()</option>
+        #end
+      </select>
+      <br>
+      <button type="submit" class="btn btn-danger submitSearch">
+        <p>
+          <b class="glyphicon glyphicon glyphicon-search"></b>
+          <b class="glyphicon glyphicon glyphicon-king"></b>
+          <b class="glyphicon glyphicon glyphicon-queen"></b>
+          <b class="glyphicon glyphicon glyphicon-knight"></b>
+        </p>
+      </button>
+    </form>
+  </div>
 
-<form action="/pokedex/strong-against-search" method="post">
-  <label for="strongAgainst">Search for Pokemon your Pokemon is strong against:</label>
-  <input id="strongAgainst" name="strongAgainst" type="text" required>
-  <button type="submit" class="btn btn-success">List my ideal enemies!</button>
-</form>
+  <div class="col-md-4 top-center">
+
+    <div class="row pokedex-title">
+      <h1>The Complete Pokedex</h1>
+      <h2>Original 151</h2>
+    </div>
+
+    <div class="row">
+      <form action="/pokedex/name-search" method="post">
+        <input id="name" name="name" type="text" autocomplete="off" required>
+        <button type="submit" class="btn btn-success" id="nameSearch">Search Pok&eacute;mon By Name</button>
+      </form>
+    </div>
+
+    <div class="row">
+      <form action="/pokedex/strong-against-search" method="post">
+        <input id="strongAgainst" name="strongAgainst" type="text" autocomplete="off" required>
+        <button type="submit" class="btn btn-success" id="idealSearch">Enter Pok&eacute;mon For Its Ideal Foes</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="col-md-4">
+    <form action="/pokedex/type-search" method="post">
+    <h2 class="heading">Search By Type</h2>
+      <select multiple id='typeId' name='typeId' type='text'>
+        <option value="All" selected>All Pokemon</option>
+        <option value="Grass">Grass</option>
+        <option value="Fire">Fire</option>
+        <option value="Water">Water</option>
+        <option value="Electric">Electric</option>
+        <option value="Poison">Poison</option>
+        <option value="Bug">Bug</option>
+        <option value="Psychic">Psychic</option>
+        <option value="Rock">Rock</option>
+        <option value="Ground">Ground</option>
+        <option value="Fighting">Fighting</option>
+        <option value="Normal">Normal</option>
+        <option value="Flying">Flying</option>
+        <option value="Ice">Ice</option>
+        <option value="Dragon">Dragon</option>
+      </select>
+      <br>
+      <button type="submit" class="btn btn-danger submitSearch">
+        <p>
+          <b class="glyphicon glyphicon glyphicon-search"></b>
+          <b class="glyphicon glyphicon glyphicon-leaf"></b>
+          <b class="glyphicon glyphicon glyphicon-fire"></b>
+          <b class="glyphicon glyphicon glyphicon-tint"></b>
+        </p>
+      </button>
+    </form>
+  </div>
+</div>
 
 <div class="row">
 #if($pokemons.size() > 0)
   #foreach ($pokemon in $pokemons)
-  <div class ="col-md-3 pokebox">
-  <a href="/pokepage/$pokemon.getId()">#$pokemon.getId() - $pokemon.getName()
-  <br>
-  <img src=/pokemon/${pokemon.getName()}.gif></a></li>
-  <br>
+  <div class = "col-md-3">
+    <div class = "pokebox">
+    <a href="/pokepage/$pokemon.getId()">#$pokemon.getId()<br>$pokemon.getName()
+    <br>
+    <img src=/pokemon/${pokemon.getName()}.gif></a></li>
+    <br>
+    </div>
   </div>
   #end
 #else

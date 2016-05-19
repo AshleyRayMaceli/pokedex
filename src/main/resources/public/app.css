@@ -1,6 +1,11 @@
 body {
   font-family: 'Exo', sans-serif;
   text-align: center;
+
+}
+
+.pokedex-background {
+  background-image: url(/wallpaper.png)
 }
 
 img {
@@ -21,10 +26,22 @@ a:hover {
   font-size: 36pt;
 }
 
+.filters {
+  background-color: #ff9b9b;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 25px;
+}
+
+.container {
+  background-color: #dbdbdb;
+  border-radius: 25px;
+}
+
 select {
-  width: 400px;
-  height: 400px;
-  font-size: 30pt;
+  width: 200px;
+  height: 200px;
+  font-size: 20pt;
 }
 
 .glyphicon-triangle-left {
@@ -123,6 +140,57 @@ select {
 }
 
 .formstyles {
+}
+
+.top-center input {
+  width: 300px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 18pt;
+  text-align: center;
+}
+
+.top-center button {
+  width: 300px;
+  font-size: 14pt;
+}
+
+.submitSearch {
+  font-size: 20pt;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+#nameSearch {
+  background-color: #4682B4;
+  border: #4682B4;
+}
+
+#idealSearch {
+  background-color: #483D8B;
+  border: #483D8B;
+}
+
+.pokebox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 16pt;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: solid black 3px;
+}
+
+/*.pokebox a {
+  color: black;
+}*/
+
+.pokebox:hover {
+  background-color: black;
+  color: white;
 }
 
 /*Pokepage.vtl starts*/

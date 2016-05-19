@@ -161,5 +161,12 @@ public class Pokemon {
     }
   }
 
-
+  public static List<Pokemon> searchByType(String type) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM pokemons WHERE type_1 = :type OR type_2 = :type";
+      return con.createQuery(sql)
+        .addParameter("type", type)
+        .executeAndFetch(Pokemon.class);
+    }
+  }
 }
