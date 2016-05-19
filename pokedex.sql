@@ -874,7 +874,6 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 37	Fire	None	Vulpix	At the time of its birth, Vulpix has one white tail. The tail separates into six if this Pokémon receives plenty of love from its Trainer. The six tails become magnificently curled.	21.8000000000000007	24	f	995
 39	Normal	None	Jigglypuff	Jigglypuff's vocal cords can freely adjust the wavelength of its voice. This Pokémon uses this ability to sing at precisely the right wavelength to make its foes most drowsy.	12.0999999999999996	20	f	996
 44	Grass	Poison	Gloom	Gloom releases a foul fragrance from the pistil of its flower. When faced with danger, the stench worsens. If this Pokémon is feeling calm and secure, it does not release its usual stinky aroma.	19	31	f	994
-66	Fighting	None	Machop	Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans.	43	31	f	28
 59	Fire	None	Arcanine	Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.	341.699999999999989	75	f	0
 60	Water	None	Poliwag	Poliwag has a very thin skin. It is possible to see the Pokémon's spiral innards right through the skin. Despite its thinness, however, the skin is also very flexible. Even sharp fangs bounce right off it.	27.3000000000000007	24	f	25
 62	Water	Fighting	Poliwrath	Poliwrath's highly developed, brawny muscles never grow fatigued, however much it exercises. It is so tirelessly strong, this Pokémon can swim back and forth across the ocean without effort.	119	51	f	0
@@ -970,6 +969,7 @@ COPY pokemons (id, type_1, type_2, name, description, weight, height, mega_evolv
 149	Dragon	Flying	Dragonite	Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.	463	87	f	0
 150	Psychic	None	Mewtwo	Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.	269	79	t	0
 151	Psychic	None	Mew	Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.	8.80000000000000071	16	f	0
+66	Fighting	None	Machop	Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans.	43	31	f	28
 \.
 
 
