@@ -119,6 +119,10 @@ public class App {
         player2Pokemon = Pokemon.searchByName("Magikarp").get(0);
       }
       player2Pokemon.hp = 500;
+      String p2hp = Integer.toString(player2Pokemon.hp / 5);
+      String p1hp = Integer.toString(player1Pokemon.hp / 5);
+      model.put("p2HpBar", "width:" + p2hp + "%");
+      model.put("p1HpBar", "width:" + p1hp + "%");
       model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
       request.session().attribute("player2Pokemon", player2Pokemon);
       model.put("moves", player1Pokemon.getMoves());
@@ -149,12 +153,14 @@ public class App {
       Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       model.put("attackResult", move.attack(request.session().attribute("player2Pokemon")));
       String p2hp = Integer.toString(player2Pokemon.hp / 5);
+      String p1hp = Integer.toString(player1Pokemon.hp / 5);
       if (player2Pokemon.hp <= 0) {
         response.redirect ("/battleOver");
         return null;
       }
       else {
         model.put("p2HpBar", "width:" + p2hp + "%");
+        model.put("p1HpBar", "width:" + p1hp + "%");
         model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
         model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
         model.put("moves", player2Pokemon.getMoves());
@@ -171,11 +177,15 @@ public class App {
       Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
       Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
       model.put("attackResult", move.attack(request.session().attribute("player1Pokemon")));
+      String p2hp = Integer.toString(player2Pokemon.hp / 5);
+      String p1hp = Integer.toString(player1Pokemon.hp / 5);
       if (player1Pokemon.hp <= 0) {
         response.redirect ("/battleOver");
         return null;
       }
       else {
+        model.put("p2HpBar", "width:" + p2hp + "%");
+        model.put("p1HpBar", "width:" + p1hp + "%");
         model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
         model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
         model.put("moves", player1Pokemon.getMoves());
