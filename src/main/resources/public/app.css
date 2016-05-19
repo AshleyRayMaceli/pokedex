@@ -184,9 +184,9 @@ select {
   border: solid black 3px;
 }
 
-/*.pokebox a {
+.link {
   color: black;
-}*/
+}
 
 .pokebox:hover {
   background-color: black;
