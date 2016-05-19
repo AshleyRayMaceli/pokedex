@@ -222,7 +222,7 @@ select {
 }
 /*Pokepage.vtl ends*/
 
-.poke-battle-gif {
+.poke-battle-flipped-gif {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -231,13 +231,17 @@ select {
   -ms-filter: "FlipH";
 }
 
-#bob {
-  position: absolute;
+.poke-battle-gif {
+  padding: 10px 10px 10px 10px;
+}
+
+#attacker {
+  position: relative;
   animation-iteration-count: 1
 }
 
 #defender {
-  position: absolute;
+  position: relative;
   -webkit-animation: mymove 1s;
 }
 

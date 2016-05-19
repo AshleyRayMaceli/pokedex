@@ -212,6 +212,10 @@ public class App {
       model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
       model.put("moves", player2Pokemon.getMoves());
       model.put("switched", true);
+      String p2hp = Integer.toString(player2Pokemon.hp / 5);
+      String p1hp = Integer.toString(player1Pokemon.hp / 5);
+      model.put("p2HpBar", "width:" + p2hp + "%");
+      model.put("p1HpBar", "width:" + p1hp + "%");
       model.put("template", "templates/pokefight2pTurn.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -233,6 +237,10 @@ public class App {
       model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
       model.put("moves", player1Pokemon.getMoves());
       model.put("switched", true);
+      String p2hp = Integer.toString(player2Pokemon.hp / 5);
+      String p1hp = Integer.toString(player1Pokemon.hp / 5);
+      model.put("p2HpBar", "width:" + p2hp + "%");
+      model.put("p1HpBar", "width:" + p1hp + "%");
       model.put("template", "templates/pokefight1pTurn.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
