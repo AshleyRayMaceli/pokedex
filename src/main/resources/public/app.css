@@ -223,10 +223,24 @@ select {
 /*Pokepage.vtl ends*/
 
 .poke-battle-gif {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+#bob {
+  position: absolute;
+  animation-iteration-count: 1
+}
+
+#defender {
+  position: absolute;
+  -webkit-animation: mymove 1s;
+}
+
+@-webkit-keyframes mymove {
+   50% {-webkit-transform: rotate(45deg);}
 }
