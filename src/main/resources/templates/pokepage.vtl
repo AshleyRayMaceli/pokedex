@@ -42,8 +42,26 @@
 </div>
 
 <div class="row poke-description">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-1">
+    #if ($pokemon.getId() == 1)
+    <a href="/pokepage/$pokemons.size()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+    #else
+    <a href="/pokepage/$pokemon.getPreviousId()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+    #end
+  </div>
+
+  <div class="col-md-10">
     <p class="poke-text">$pokemon.getDescription()</p>
+  </div>
+
+  <div class="col-md-1">
+    #if ($pokemon.getId() == $pokemons.size())
+    <a href="/pokepage/1">
+    <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
+    #else
+    <a href="/pokepage/$pokemon.getNextId()">
+    <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
+    #end
   </div>
 </div>
 
@@ -51,27 +69,21 @@
   <div class="col-md-10 col-md-offset-1 moveset1">
     <h2>Known Moves:</h2>
     #foreach ($move in $pokemon.getMoves())
-      $move.getName()
-      <br>
+      <div class="col-md-6">
+        <div class="move-box">
+          $move.getName()
+        </div>
+      </div>
     #end
   </div>
-
 </div>
-<div class= "row home">
-  #if ($pokemon.getId() == 1)
-  <a href="/pokepage/$pokemons.size()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
-  #else
-  <a href="/pokepage/$pokemon.getPreviousId()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
-  #end
 
-  <a href="/pokedex">Back To Pok&eacute;dex</a>
+<div class="row">
+<br>
+<a href="/pokedex" class="btn btn-danger home">Back To Pok&eacute;dex</a>
+</div>
 
-  #if ($pokemon.getId() == $pokemons.size())
-  <a href="/pokepage/1">
-  <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
-  #else
-  <a href="/pokepage/$pokemon.getNextId()">
-  <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
-  #end
-
+<div class="row">
+<a href="/" class="btn btn-info home">Back To Home</a>
+<br>
 </div>

@@ -53,13 +53,20 @@ select {
 }
 
 .arrows {
+  color: black;
   font-size: 40pt;
   display: block;
+}
+
+.move-box {
+  border: solid black 3px;
+  margin: 5px;
 }
 
 .home {
   display: block;
   margin-bottom: 30px;
+  font-size: 16pt;
 }
 
 .dexball {
