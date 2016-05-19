@@ -56,6 +56,7 @@
         <option value="Poison">Poison</option>
         <option value="Bug">Bug</option>
         <option value="Psychic">Psychic</option>
+        <option value="Ghost">Ghost</option>
         <option value="Rock">Rock</option>
         <option value="Ground">Ground</option>
         <option value="Fighting">Fighting</option>
@@ -81,17 +82,19 @@
 #if($pokemons.size() > 0)
   #foreach ($pokemon in $pokemons)
   <div class = "col-md-3">
+    <a href="/pokepage/$pokemon.getId()" class="link">
     <div class = "pokebox">
-    <a href="/pokepage/$pokemon.getId()">#$pokemon.getId()<br>$pokemon.getName()
+    #$pokemon.getId()<br>$pokemon.getName()
     <br>
-    <img src=/pokemon/${pokemon.getName()}.gif></a></li>
+    <img src=/pokemon/${pokemon.getName()}.gif>
     <br>
     </div>
+    </a>
   </div>
   #end
 #else
-  <h2>No matches for your search results</h2>
-  <h2>Try another search or press the Home button</h2>
+  <h2>No matches for your search results.</h2>
+  <h2>Try another search or press the Home button.</h2>
 #end
 </div>
 

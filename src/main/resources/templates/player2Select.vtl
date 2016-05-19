@@ -5,13 +5,16 @@
   $pokemon2
 
 #else
-  <form action="/player2Selection" method="post">
-    <label for="player2Pokemon">Player 2, select your pokemon:</label>
-    <input id="player2Pokemon" name="player2Pokemon" type="text" required>
-    <button type="submit" class="btn btn-success">Search Pokemon</button>
-  </form>
+
+  <h2>Player 2, Select Your Pok&eacute;mon For Battle!</h2>
+
+  <div class="choosePokemon">
+    <form action="/player2Selection" method="post">
+      <label for="player2Pokemon">Type the name of your desired Pok&eacute;mon!</label>
+      <input class="formstyles" id="player2Pokemon" name="player2Pokemon" type="text" autocomplete="off" required>
+      <button type="submit" class="btn btn-success choosePokemon">Search Pokemon</button>
+    </form>
+  </div>
 #end
 
-<br>
-<a href="/" class="btn btn-info">Back To Home</a>
-<br>
+<a href="/" class="btn btn-info home">Back To Home</a>

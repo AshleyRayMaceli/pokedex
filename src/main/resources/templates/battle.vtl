@@ -13,18 +13,16 @@ music.play();
     $pokemon1
 
   #else
-    <h2>Player 1 Select your pokemon for battle!!!</h2>
+    <h2>Player 1, Select Your Pok&eacute;mon For Battle!</h2>
 
     <form action="/player1Selection" method="post">
-      <label for="player1Pokemon">Type the name of your pokemon!</label>
-      <input class="formstyles" id="player1Pokemon" name="player1Pokemon" type="text" required>
-      <button type="submit" class="btn btn-success">Search Pokemon</button>
+      <label for="player1Pokemon" class="choosePokemon">Type the name of your desired Pok&eacute;mon!</label>
+      <br>
+      <input class="formstyles" id="player1Pokemon" name="player1Pokemon" type="text" autocomplete="off" required>
+      <button type="submit" class="btn btn-success choosePokemon">Search Pokemon</button>
     </form>
   #end
 
-  <a href="/music" target="_blank" class="btn btn-info">Battle Music! (Control-click to open in background)</a>
+  <a href="/music" target="_blank" class="btn btn-warning home">Battle Music! (Control-click to open in background)</a>
 
-
-  <br>
-  <a href="/" class="btn btn-info">Back To Home</a>
-  <br>
+  <a href="/" class="btn btn-info home">Back To Home</a>

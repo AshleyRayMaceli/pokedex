@@ -1,8 +1,10 @@
-<h1 class = "number">#$pokemon.getId()</h1>
-<h1 class = "name">$pokemon.getName()</h1>
+<body class="pokepage-background">
+
+<h1 class="name">#$pokemon.getId()</h1>
+<h1 class="name">$pokemon.getName()</h1>
 
 <div class="row">
-  <div class="col-md-5 poke-img">
+  <div class="col-md-5 poke-img $pokemon.getType1()">
     <img class="entry-image" src=/pokemon/$pokemon.getImageName()>
   </div>
 
@@ -10,12 +12,10 @@
   </div>
 
   <div class="col-md-5 poke-stats">
-    <br>
-    <br>
   #if ($pokemon.getType2().equals("None"))
     <h3>$pokemon.getType1()</h3>
   #else
-    <h3>$pokemon.getType1() - $pokemon.getType2()</h3>
+    <h3>$pokemon.getType1() | $pokemon.getType2()</h3>
   #end
   <h3>$pokemon.getWeight() lbs</h3>
   <h3>$pokemon.getHeight() inches</h3>
@@ -42,8 +42,26 @@
 </div>
 
 <div class="row poke-description">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-1">
+    #if ($pokemon.getId() == 1)
+    <a href="/pokepage/$pokemons.size()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+    #else
+    <a href="/pokepage/$pokemon.getPreviousId()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
+    #end
+  </div>
+
+  <div class="col-md-10">
     <p class="poke-text">$pokemon.getDescription()</p>
+  </div>
+
+  <div class="col-md-1">
+    #if ($pokemon.getId() == $pokemons.size())
+    <a href="/pokepage/1">
+    <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
+    #else
+    <a href="/pokepage/$pokemon.getNextId()">
+    <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
+    #end
   </div>
 </div>
 
@@ -51,27 +69,21 @@
   <div class="col-md-10 col-md-offset-1 moveset1">
     <h2>Known Moves:</h2>
     #foreach ($move in $pokemon.getMoves())
-      $move.getName()
-      <br>
+      <div class="col-md-6">
+        <div class="move-box">
+          $move.getName()
+        </div>
+      </div>
     #end
   </div>
-
 </div>
-<div class= "row home">
-  #if ($pokemon.getId() == 1)
-  <a href="/pokepage/$pokemons.size()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
-  #else
-  <a href="/pokepage/$pokemon.getPreviousId()"><span class="glyphicon glyphicon-triangle-left arrows" aria-hidden="true"></span></a>
-  #end
 
-  <a href="/pokedex">Back To Pok&eacute;dex</a>
+<div class="row">
+<br>
+<a href="/pokedex" class="btn btn-danger home">Back To Pok&eacute;dex</a>
+</div>
 
-  #if ($pokemon.getId() == $pokemons.size())
-  <a href="/pokepage/1">
-  <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
-  #else
-  <a href="/pokepage/$pokemon.getNextId()">
-  <span class="glyphicon glyphicon-triangle-right arrows" aria-hidden="true"></span></a>
-  #end
-
+<div class="row">
+<a href="/" class="btn btn-info home">Back To Home</a>
+<br>
 </div>

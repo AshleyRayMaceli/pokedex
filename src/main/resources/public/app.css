@@ -1,11 +1,22 @@
 body {
   font-family: 'Exo', sans-serif;
   text-align: center;
+}
 
+.name {
+  font-weight: bold;
+  font-size: 44pt;
 }
 
 .pokedex-background {
-  background-image: url(/wallpaper.png)
+  background-image: url(/wallpaper.png);
+}
+
+.pokepage-background {
+  background-image: url(/wallpaper2.png);
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: cover;
 }
 
 img {
@@ -53,13 +64,22 @@ select {
 }
 
 .arrows {
+  color: black;
   font-size: 40pt;
   display: block;
+}
+
+.move-box {
+  margin: 5px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
 }
 
 .home {
   display: block;
   margin-bottom: 30px;
+  font-size: 16pt;
 }
 
 .dexball {
@@ -129,7 +149,6 @@ select {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
-  color: white;
 }
 
 .battleImg2 {
@@ -140,6 +159,7 @@ select {
 }
 
 .formstyles {
+  text-align: center;
 }
 
 .top-center input {
@@ -184,13 +204,14 @@ select {
   border: solid black 3px;
 }
 
-/*.pokebox a {
+.link {
   color: black;
-}*/
+}
 
 .pokebox:hover {
-  background-color: black;
+  background-color: grey;
   color: white;
+  border: solid gray 3px;
 }
 
 /*Pokepage.vtl starts*/
@@ -219,7 +240,89 @@ select {
   min-height: 300px;
   border-radius: 25px;
   background-color: grey;
+  padding-top: 10px;
 }
+
+.poke-stats h3 {
+  font-size: 32pt;
+  color: white;
+}
+
+.Grass {
+  background-image: url(Grass.jpg);
+  background-size: 100% 100%;
+}
+
+.Fire {
+  background-image: url(Fire.jpg);
+  background-size: 100% 100%;
+}
+
+.Water {
+  background-image: url(Water.jpg);
+  background-size: 100% 100%;
+}
+
+.Electric {
+  background-image: url(Electric.jpg);
+  background-size: 100% 100%;
+}
+
+.Poison {
+  background-image: url(Poison.jpg);
+  background-size: 100% 100%;
+}
+
+.Bug {
+  background-image: url(Bug.jpg);
+  background-size: 100% 100%;
+}
+
+.Psychic {
+  background-image: url(Psychic.jpg);
+  background-size: 100% 100%;
+}
+
+.Rock {
+  background-image: url(Rock.jpg);
+  background-size: 100% 100%;
+}
+
+.Ground {
+  background-image: url(Ground.jpg);
+  background-size: 100% 100%;
+}
+
+.Fighting {
+  background-image: url(Fighting.jpg);
+  background-size: 100% 100%;
+}
+
+.Normal {
+  background-image: url(Normal.jpg);
+  background-size: 100% 100%;
+}
+
+.Flying {
+  background-image: url(Flying.jpg);
+  background-size: 100% 100%;
+}
+
+.Ice {
+  background-image: url(Ice.jpg);
+  background-size: 100% 100%;
+}
+
+.Dragon {
+  background-image: url(Dragon.jpg);
+  background-size: 100% 100%;
+}
+
+.Ghost {
+  background-image: url(Ghost.jpg);
+  background-size: 100% 100%;
+}
+
 /*Pokepage.vtl ends*/
 
 .poke-battle-flipped-gif {
@@ -243,6 +346,15 @@ select {
 #defender {
   position: relative;
   -webkit-animation: mymove 1s;
+}
+
+#player1Pokemon {
+  color: black;
+  font-size: 20pt;
+}
+
+.choosePokemon {
+  font-size: 20pt;
 }
 
 @-webkit-keyframes mymove {
