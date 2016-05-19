@@ -1,8 +1,10 @@
-<h1 class = "number">#$pokemon.getId()</h1>
-<h1 class = "name">$pokemon.getName()</h1>
+<body class="pokepage-background">
+
+<h1 class="name">#$pokemon.getId()</h1>
+<h1 class="name">$pokemon.getName()</h1>
 
 <div class="row">
-  <div class="col-md-5 poke-img">
+  <div class="col-md-5 poke-img $pokemon.getType1()">
     <img class="entry-image" src=/pokemon/$pokemon.getImageName()>
   </div>
 
@@ -10,12 +12,10 @@
   </div>
 
   <div class="col-md-5 poke-stats">
-    <br>
-    <br>
   #if ($pokemon.getType2().equals("None"))
     <h3>$pokemon.getType1()</h3>
   #else
-    <h3>$pokemon.getType1() - $pokemon.getType2()</h3>
+    <h3>$pokemon.getType1() | $pokemon.getType2()</h3>
   #end
   <h3>$pokemon.getWeight() lbs</h3>
   <h3>$pokemon.getHeight() inches</h3>

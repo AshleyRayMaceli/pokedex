@@ -1,11 +1,19 @@
 body {
   font-family: 'Exo', sans-serif;
   text-align: center;
+}
 
+.name {
+  font-weight: bold;
+  font-size: 44pt;
 }
 
 .pokedex-background {
-  background-image: url(/wallpaper.png)
+  background-image: url(/wallpaper.png);
+}
+
+.pokepage-background {
+  background-image: url(/wallpaper2.png);
 }
 
 img {
@@ -59,8 +67,10 @@ select {
 }
 
 .move-box {
-  border: solid black 3px;
   margin: 5px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
 }
 
 .home {
@@ -227,6 +237,87 @@ select {
   border-radius: 25px;
   background-color: grey;
 }
+
+.poke-stats h3 {
+  font-size: 32pt;
+  color: white;
+}
+
+.Grass {
+  background-image: url(Grass.jpg);
+  background-size: 100% 100%;
+}
+
+.Fire {
+  background-image: url(Fire.jpg);
+  background-size: 100% 100%;
+}
+
+.Water {
+  background-image: url(Water.jpg);
+  background-size: 100% 100%;
+}
+
+.Electric {
+  background-image: url(Electric.jpg);
+  background-size: 100% 100%;
+}
+
+.Poison {
+  background-image: url(Poison.jpg);
+  background-size: 100% 100%;
+}
+
+.Bug {
+  background-image: url(Bug.jpg);
+  background-size: 100% 100%;
+}
+
+.Psychic {
+  background-image: url(Psychic.jpg);
+  background-size: 100% 100%;
+}
+
+.Rock {
+  background-image: url(Rock.jpg);
+  background-size: 100% 100%;
+}
+
+.Ground {
+  background-image: url(Ground.jpg);
+  background-size: 100% 100%;
+}
+
+.Fighting {
+  background-image: url(Fighting.jpg);
+  background-size: 100% 100%;
+}
+
+.Normal {
+  background-image: url(Normal.jpg);
+  background-size: 100% 100%;
+}
+
+.Flying {
+  background-image: url(Flying.jpg);
+  background-size: 100% 100%;
+}
+
+.Ice {
+  background-image: url(Ice.jpg);
+  background-size: 100% 100%;
+}
+
+.Dragon {
+  background-image: url(Dragon.jpg);
+  background-size: 100% 100%;
+}
+
+.Ghost {
+  background-image: url(Ghost.jpg);
+  background-size: 100% 100%;
+}
+
 /*Pokepage.vtl ends*/
 
 .poke-battle-gif {
