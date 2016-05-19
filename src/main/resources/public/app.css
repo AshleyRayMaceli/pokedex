@@ -14,6 +14,9 @@ body {
 
 .pokepage-background {
   background-image: url(/wallpaper2.png);
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: cover;
 }
 
 img {
@@ -236,6 +239,7 @@ select {
   min-height: 300px;
   border-radius: 25px;
   background-color: grey;
+  padding-top: 10px;
 }
 
 .poke-stats h3 {
