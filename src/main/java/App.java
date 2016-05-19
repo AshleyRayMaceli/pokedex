@@ -20,6 +20,7 @@ public class App {
     get("/pokedex", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("pokemons", Pokemon.all());
+      model.put("moves", Move.all());
       model.put("template", "templates/pokedex.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -28,6 +29,24 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("name");
       model.put("pokemons", Pokemon.searchByName(name));
+      model.put("template", "templates/pokedex.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/pokedex/move-search", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Integer moveDropDownResult = Integer.parseInt(request.queryParams("moveId"));
+      Move move = Move.find(moveDropDownResult);
+      List<Pokemon> pokemons = new ArrayList<Pokemon>();
+
+      if (moveDropDownResult == 0) {
+        pokemons = Pokemon.all();
+      } else {
+        pokemons = move.getPokemons();
+      }
+
+      model.put("pokemons", pokemons);
+      model.put("moves", Move.all());
       model.put("template", "templates/pokedex.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
