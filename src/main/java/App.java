@@ -51,6 +51,23 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/pokedex/type-search", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String typeDropDownResult = request.queryParams("typeId");
+      List<Pokemon> pokemons = new ArrayList<Pokemon>();
+
+      if (typeDropDownResult.equals("All")) {
+        pokemons = Pokemon.all();
+      } else {
+        pokemons = Pokemon.searchByType(typeDropDownResult);
+      }
+
+      model.put("pokemons", pokemons);
+      model.put("moves", Move.all());
+      model.put("template", "templates/pokedex.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/pokepage/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Pokemon pokemon = Pokemon.find(Integer.parseInt(request.params("id")));
