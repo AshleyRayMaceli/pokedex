@@ -1,3 +1,12 @@
+<!-- <script>
+// var myWindow = window.open("https://www.youtube.com/watch?v=2Jmty_NiaXc", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=200, height=100");
+// // var musicWindow = window.open("/music");
+// myWindow;
+// this.window.focus();
+
+var music = new Audio('music/pokemon.mp3')
+music.play();
+</script> -->
 <body class="battleImg">
   #if ($pokemon1)
 
@@ -12,6 +21,8 @@
       <button type="submit" class="btn btn-success">Search Pokemon</button>
     </form>
   #end
+
+  <a href="/music" target="_blank" class="btn btn-info">Battle Music! (Control-click to open in background)</a>
 
 
   <br>

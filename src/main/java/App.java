@@ -50,6 +50,12 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/music", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/music.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     post("/player1Selection", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String pokemon1 = request.queryParams("player1Pokemon");
@@ -85,31 +91,63 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/pokefight/2pturn", (request, response) -> {
+    get("/battleOver", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      Move move = Move.searchByName(request.queryParams("move")).get(0);
-      Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
       Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
-      model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
-      model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
-      model.put("moves", player2Pokemon.getMoves());
-      move.attack(request.session().attribute("player2Pokemon"));
-      model.put("template", "templates/pokefight2pTurn.vtl");
+      Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
+      if (player1Pokemon.hp > 0) {
+        model.put("winner", "Player 1");
+      } else if (player2Pokemon.hp > 0) {
+        model.put("winner", "Player 2");
+      } else {
+        model.put("winner", "Tie");
+      }
+      model.put("template", "templates/battleOver.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/pokefight/1pturn", (request, response) -> {
+    post("/pokefight/2pturn", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      Move move = Move.searchByName(request.queryParams("move")).get(0);
+      Move move = Move.searchByExactName(request.queryParams("move")).get(0);
       Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
       Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
-      model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
-      model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
-      model.put("moves", player1Pokemon.getMoves());
-      move.attack(request.session().attribute("player1Pokemon"));
-      model.put("template", "templates/pokefight1pTurn.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
+      model.put("attackResult", move.attack(request.session().attribute("player2Pokemon")));
+      String p2hp = Integer.toString(player2Pokemon.hp / 5);
+      if (player2Pokemon.hp <= 0) {
+        response.redirect ("/battleOver");
+        return null;
+      }
+      else {
+        model.put("p2HpBar", "width:" + p2hp + "%");
+        model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
+        model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
+        model.put("moves", player2Pokemon.getMoves());
+        model.put("attackName", move.getName());
+        model.put("template", "templates/pokefight2pTurn.vtl");
+        return new ModelAndView(model, layout);
+      }}, new VelocityTemplateEngine());
+
+
+
+    post("/pokefight/1pturn", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Move move = Move.searchByExactName(request.queryParams("move")).get(0);
+      Pokemon player2Pokemon = request.session().attribute("player2Pokemon");
+      Pokemon player1Pokemon = request.session().attribute("player1Pokemon");
+      model.put("attackResult", move.attack(request.session().attribute("player1Pokemon")));
+      if (player1Pokemon.hp <= 0) {
+        response.redirect ("/battleOver");
+        return null;
+      }
+      else {
+        model.put("player1Pokemon", request.session().attribute("player1Pokemon"));
+        model.put("player2Pokemon", request.session().attribute("player2Pokemon"));
+        model.put("moves", player1Pokemon.getMoves());
+        model.put("attackName", move.getName());
+        model.put("template", "templates/pokefight1pTurn.vtl");
+        return new ModelAndView(model, layout);
+      }}, new VelocityTemplateEngine());
+
 
     post("/pokefight/player1Change", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();

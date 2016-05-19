@@ -223,17 +223,18 @@ public class Move {
 
       if (this.hitCalculator()) {
         damage = this.getPower();
-        if (this.effectiveness(defendingPokemon) > 1) {
-          defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
-          return String.format("The attack is super effective and did %.2f damage", damage);
-        } else if (this.effectiveness(defendingPokemon) == 0) {
+        double multiplier = this.effectiveness(defendingPokemon);
+        if (multiplier > 1) {
+          defendingPokemon.hp -= damage * multiplier;
+          return String.format("The attack is super effective and did %.2f damage", damage * multiplier);
+        } else if (multiplier == 0) {
           return "The attack is ineffective and did 0 damage";
-        } else if (this.effectiveness(defendingPokemon) < 1) {
-          defendingPokemon.hp -= damage * this.effectiveness(defendingPokemon);
-          return String.format("The attack is not very effective and did %.2f damage", damage);
+        } else if (multiplier < 1) {
+          defendingPokemon.hp -= damage * multiplier;
+          return String.format("The attack is not very effective and did %.2f damage", damage * multiplier);
         } else {
           defendingPokemon.hp -= damage;
-          return String.format("The attack does %.2f damage", damage);
+          return String.format("The attack does %.2f damage", damage * multiplier);
         }
       } else {
         return "The attack misses and did 0 damage";
@@ -246,6 +247,16 @@ public class Move {
         String sql = "SELECT * FROM moves WHERE LOWER (name) LIKE :move";
         return con.createQuery(sql)
           .addParameter("move", '%' + name + '%')
+          .executeAndFetch(Move.class);
+      }
+    }
+
+    public static List<Move> searchByExactName(String name) {
+      name = name.toLowerCase();
+      try(Connection con = DB.sql2o.open()) {
+        String sql = "SELECT * FROM moves WHERE LOWER (name) = :move";
+        return con.createQuery(sql)
+          .addParameter("move", name)
           .executeAndFetch(Move.class);
       }
     }
