@@ -1,14 +1,37 @@
-<form action="/pokedex/name-search" method="post">
-  <label for="name">Search Pok&eacute;mon by Name:</label>
-  <input id="name" name="name" type="text" required>
-  <button type="submit" class="btn btn-success">Search Pok&eacute;mon</button>
-</form>
+<div class="row filters">
+  <div class="col-md-4">
+    <form action="/move-search" method="post">
+    <h2 class="heading">Search By Move</h2>
+      <select multiple id='moveId' name='moveId' type='text'>
+        <option value=0 selected>All Moves</option>
+        #foreach($move in $moves)
+          <option value=$move.getId()>$move.getName()</option>
+        #end
+      </select>
+      <br>
+      <button type="submit" id="submitSearch" class="btn btn-danger">
+        <p><b class="glyphicon glyphicon glyphicon-search"></b></p>
+      </button>
+    </form>
+  </div>
 
-<form action="/pokedex/strong-against-search" method="post">
-  <label for="strongAgainst">Search for Pokemon your Pokemon is strong against:</label>
-  <input id="strongAgainst" name="strongAgainst" type="text" required>
-  <button type="submit" class="btn btn-success">List my ideal enemies!</button>
-</form>
+  <div class="col-md-4">
+    <form action="/pokedex/name-search" method="post">
+      <input id="name" name="name" type="text" required>
+      <button type="submit" class="btn btn-success">Search Pok&eacute;mon By Name</button>
+    </form>
+
+    <form action="/pokedex/strong-against-search" method="post">
+      <input id="strongAgainst" name="strongAgainst" type="text" required>
+      <button type="submit" class="btn btn-success">Enter Pok&eacute;mon For Its Ideal Foes</button>
+    </form>
+
+  </div>
+
+  <div class="col-md-4">
+    Placeholder
+  </div>
+</div>
 
 <div class="row">
 #if($pokemons.size() > 0)

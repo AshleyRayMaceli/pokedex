@@ -81,4 +81,15 @@ public class MoveTest {
     Pokemon otherPokemon = new Pokemon("Vanilla pokemon", "Normal", "None", "a normal pokemon", 50.0, 12, 16, false);
     assertEquals("The attack does 60.00 damage", myMove.attack(otherPokemon));
   }
+
+  @Test
+  public void getPokemons_getPokemonFromMoveSearch() {
+    Move myMove = new Move("Punch", "Normal", 50.0, 100);
+    myMove.save();
+    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
+    myPokemon.save();
+    myPokemon.addMove(myMove);
+    Pokemon savedPokemon = myMove.getPokemons().get(0);
+    assertTrue(myPokemon.equals(savedPokemon));
+  }
 }
