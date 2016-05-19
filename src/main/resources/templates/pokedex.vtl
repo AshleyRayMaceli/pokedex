@@ -1,3 +1,4 @@
+<body class="pokedex-background">
 <div class="row filters">
   <div class="col-md-4">
     <form action="/pokedex/move-search" method="post">
@@ -79,11 +80,13 @@
 <div class="row">
 #if($pokemons.size() > 0)
   #foreach ($pokemon in $pokemons)
-  <div class ="col-md-3 pokebox">
-  <a href="/pokepage/$pokemon.getId()">#$pokemon.getId() - $pokemon.getName()
-  <br>
-  <img src=/pokemon/${pokemon.getName()}.gif></a></li>
-  <br>
+  <div class = "col-md-3">
+    <div class = "pokebox">
+    <a href="/pokepage/$pokemon.getId()">#$pokemon.getId()<br>$pokemon.getName()
+    <br>
+    <img src=/pokemon/${pokemon.getName()}.gif></a></li>
+    <br>
+    </div>
   </div>
   #end
 #else

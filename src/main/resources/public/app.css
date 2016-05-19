@@ -1,6 +1,11 @@
 body {
   font-family: 'Exo', sans-serif;
   text-align: center;
+
+}
+
+.pokedex-background {
+  background-image: url(/wallpaper.png)
 }
 
 img {
@@ -166,6 +171,26 @@ select {
 #idealSearch {
   background-color: #483D8B;
   border: #483D8B;
+}
+
+.pokebox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 16pt;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: solid black 3px;
+}
+
+/*.pokebox a {
+  color: black;
+}*/
+
+.pokebox:hover {
+  background-color: black;
+  color: white;
 }
 
 /*Pokepage.vtl starts*/
