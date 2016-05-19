@@ -137,6 +137,37 @@ select {
 .formstyles {
 }
 
+.top-center input {
+  width: 300px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 18pt;
+  text-align: center;
+}
+
+.top-center button {
+  width: 300px;
+  font-size: 14pt;
+}
+
+.submitSearch {
+  font-size: 20pt;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+#nameSearch {
+  background-color: #4682B4;
+  border: #4682B4;
+}
+
+#idealSearch {
+  background-color: #483D8B;
+  border: #483D8B;
+}
+
 /*Pokepage.vtl starts*/
 .poke-description {
   font-size: 20pt;

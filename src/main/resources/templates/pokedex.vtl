@@ -9,22 +9,37 @@
         #end
       </select>
       <br>
-      <button type="submit" id="submitSearch" class="btn btn-danger">
-        <p><b class="glyphicon glyphicon glyphicon-search"></b></p>
+      <button type="submit" class="btn btn-danger submitSearch">
+        <p>
+          <b class="glyphicon glyphicon glyphicon-search"></b>
+          <b class="glyphicon glyphicon glyphicon-king"></b>
+          <b class="glyphicon glyphicon glyphicon-queen"></b>
+          <b class="glyphicon glyphicon glyphicon-knight"></b>
+        </p>
       </button>
     </form>
   </div>
 
-  <div class="col-md-4">
-    <form action="/pokedex/name-search" method="post">
-      <input id="name" name="name" type="text" required>
-      <button type="submit" class="btn btn-success">Search Pok&eacute;mon By Name</button>
-    </form>
+  <div class="col-md-4 top-center">
 
-    <form action="/pokedex/strong-against-search" method="post">
-      <input id="strongAgainst" name="strongAgainst" type="text" required>
-      <button type="submit" class="btn btn-success">Enter Pok&eacute;mon For Its Ideal Foes</button>
-    </form>
+    <div class="row pokedex-title">
+      <h1>The Complete Pokedex</h1>
+      <h2>Original 151</h2>
+    </div>
+
+    <div class="row">
+      <form action="/pokedex/name-search" method="post">
+        <input id="name" name="name" type="text" autocomplete="off" required>
+        <button type="submit" class="btn btn-success" id="nameSearch">Search Pok&eacute;mon By Name</button>
+      </form>
+    </div>
+
+    <div class="row">
+      <form action="/pokedex/strong-against-search" method="post">
+        <input id="strongAgainst" name="strongAgainst" type="text" autocomplete="off" required>
+        <button type="submit" class="btn btn-success" id="idealSearch">Enter Pok&eacute;mon For Its Ideal Foes</button>
+      </form>
+    </div>
 
   </div>
 
@@ -49,8 +64,13 @@
         <option value="Dragon">Dragon</option>
       </select>
       <br>
-      <button type="submit" id="submitSearch" class="btn btn-danger">
-        <p><b class="glyphicon glyphicon glyphicon-search"></b></p>
+      <button type="submit" class="btn btn-danger submitSearch">
+        <p>
+          <b class="glyphicon glyphicon glyphicon-search"></b>
+          <b class="glyphicon glyphicon glyphicon-leaf"></b>
+          <b class="glyphicon glyphicon glyphicon-fire"></b>
+          <b class="glyphicon glyphicon glyphicon-tint"></b>
+        </p>
       </button>
     </form>
   </div>
