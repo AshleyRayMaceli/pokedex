@@ -1,17 +1,16 @@
 #if ($attackName)
 <script>
 var func = function() {
-    $("#attacker").animate({"right": "650px"}, 500)
+    $("#attacker2").animate({"left": "-650px"}, 500)
 
 }
 var func2 = function() {
-    $("#attacker").animate({"right": "0px"}, 500)
+    $("#attacker2").animate({"left": "0px"}, 500)
 
 }
 
 setTimeout(func, 0);
 setTimeout(func2, 510);
-
 </script>
 
   Player 2 used ${attackName}!!! $attackResult
@@ -28,25 +27,22 @@ setTimeout(func2, 510);
 
 #end
 
-
 <br>
 <br>
 <br>
 $player1Pokemon.getName() select your move!
 
 <form action="/pokefight/2pturn" method="post">
-
   <select name="move" id="move">
   #foreach ($move in $moves)
     <option value="$move.getName()">$move.getName()</option>
-    <!-- <label for="move">$move.getName()</label>
-    <input id="move" name="move" type="hidden" value=$move.getname()> -->
   #end
   </select>
   <br>
   <button type="submit" class="btn btn-success">Attack!</button>
 </form>
 <br>
+
 <form action="/pokefight/player1Change" method="post">
   <label for="player1Change">Player 1, swap your pokemon!</label>
   <input id="player1Change" name="player1Change" type="text" required>
@@ -58,12 +54,14 @@ $player1Pokemon.getName() select your move!
     player 1's $player1Pokemon.getName() has $player1Pokemon.getHp() hp left!
 
     <div class="progress">
-    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70"
-    aria-valuemin="0" aria-valuemax="100" style="$p1HpBar">
-      $player1Pokemon.getHp() / 500
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="$p1HpBar"
+      aria-valuemin="0" aria-valuemax="100" style="$p1HpBar">
+        $player1Pokemon.getHp() / 500
+      </div>
     </div>
+    <div #if ($attackName)id="defender-left" #end>
+      <img class="poke-battle-flipped-gif" src=/pokemon/${player1Pokemon.getName()}.gif>
     </div>
-    <img class="poke-battle-gif" src=/pokemon/${player1Pokemon.getName()}.gif>
     <h3>$player1Pokemon.getName()</h3>
   </div>
   <div class="col-md-3 col-md-offset-3">
@@ -79,12 +77,14 @@ $player1Pokemon.getName() select your move!
     #else
     player 2's $player2Pokemon.getName() has $player2Pokemon.getHp() hp left!
     <div class="progress">
-      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70"
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="p2HpBar"
       aria-valuemin="0" aria-valuemax="100" style="$p2HpBar">
         $player2Pokemon.getHp() / 500
       </div>
     </div>
-    <img src=/pokemon/${player2Pokemon.getName()}.gif>
+    <div id="attacker2">
+      <img src=/pokemon/${player2Pokemon.getName()}.gif>
+    </div>
     <h3>$player2Pokemon.getName()</h3>
     #end
   </div>

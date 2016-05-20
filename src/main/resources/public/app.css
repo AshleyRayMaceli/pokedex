@@ -340,12 +340,19 @@ select {
 
 #attacker {
   position: relative;
-  animation-iteration-count: 1
+}
+
+#attacker2 {
+  position: relative;
 }
 
 #defender {
   position: relative;
   -webkit-animation: mymove 1s;
+}
+#defender-left {
+  position: relative;
+  -webkit-animation: mymove-left 1s;
 }
 
 #player1Pokemon {
@@ -359,4 +366,8 @@ select {
 
 @-webkit-keyframes mymove {
    50% {-webkit-transform: rotate(45deg);}
+}
+
+@-webkit-keyframes mymove-left {
+   50% {-webkit-transform: rotate(-45deg);}
 }
