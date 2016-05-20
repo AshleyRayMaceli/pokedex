@@ -158,6 +158,32 @@ select {
   background-color: black;
 }
 
+.redeploy {
+  font-size: 16pt;
+}
+
+.battleMove {
+  display: block;
+  font-size: 18pt;
+  width: 100%;
+}
+
+#player1Change {
+  font-size: 16pt;
+  text-align: center;
+}
+
+.battlefield {
+  background-image: url(/battlefield.jpg);
+  border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.col-md-3 {
+  margin-top: 40px;
+}
+
 .formstyles {
   text-align: center;
 }

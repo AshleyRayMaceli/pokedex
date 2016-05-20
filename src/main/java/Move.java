@@ -226,18 +226,18 @@ public class Move {
         double multiplier = this.effectiveness(defendingPokemon);
         if (multiplier > 1) {
           defendingPokemon.hp -= damage * multiplier;
-          return String.format("The attack is super effective and did %.2f damage", damage * multiplier);
+          return String.format("The attack is super effective and did %.2f damage!!", damage * multiplier);
         } else if (multiplier == 0) {
-          return "The attack is ineffective and did 0 damage";
+          return "The attack is ineffective and did 0 damage.";
         } else if (multiplier < 1) {
           defendingPokemon.hp -= damage * multiplier;
-          return String.format("The attack is not very effective and did %.2f damage", damage * multiplier);
+          return String.format("The attack is not very effective and did %.2f damage.", damage * multiplier);
         } else {
           defendingPokemon.hp -= damage;
-          return String.format("The attack does %.2f damage", damage * multiplier);
+          return String.format("The attack does %.2f damage!", damage * multiplier);
         }
       } else {
-        return "The attack misses and did 0 damage";
+        return "The attack misses and did 0 damage...";
       }
     }
 
