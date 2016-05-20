@@ -173,6 +173,15 @@ select {
   text-align: center;
 }
 
+#player2Change {
+  font-size: 16pt;
+  text-align: center;
+}
+
+.toprow {
+  min-height: 175px;
+}
+
 .battlefield {
   background-image: url(/battlefield.jpg);
   border-radius: 15px;
@@ -351,7 +360,7 @@ select {
 
 /*Pokepage.vtl ends*/
 
-.poke-battle-gif {
+.poke-battle-flipped-gif {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -360,14 +369,25 @@ select {
   -ms-filter: "FlipH";
 }
 
-#bob {
-  position: absolute;
-  animation-iteration-count: 1
+.poke-battle-gif {
+  padding: 10px 10px 10px 10px;
+}
+
+#attacker {
+  position: relative;
+}
+
+#attacker2 {
+  position: relative;
 }
 
 #defender {
-  position: absolute;
+  position: relative;
   -webkit-animation: mymove 1s;
+}
+#defender-left {
+  position: relative;
+  -webkit-animation: mymove-left 1s;
 }
 
 #player1Pokemon {
@@ -381,4 +401,8 @@ select {
 
 @-webkit-keyframes mymove {
    50% {-webkit-transform: rotate(45deg);}
+}
+
+@-webkit-keyframes mymove-left {
+   50% {-webkit-transform: rotate(-45deg);}
 }
