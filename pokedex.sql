@@ -382,7 +382,6 @@ COPY moves_pokemons (id, move_id, pokemon_id) FROM stdin;
 103	51	32
 104	68	32
 105	46	32
-106	46	32
 107	95	33
 108	51	33
 109	68	33
@@ -512,7 +511,6 @@ COPY moves_pokemons (id, move_id, pokemon_id) FROM stdin;
 233	13	72
 234	52	72
 235	68	72
-236	13	72
 237	106	73
 238	68	73
 239	13	73
