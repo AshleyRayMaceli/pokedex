@@ -79,7 +79,7 @@ public class MoveTest {
   public void attack_method_does_damage() {
     Move myMove = new Move("Punch", "Normal", 60.0, 100);
     Pokemon otherPokemon = new Pokemon("Vanilla pokemon", "Normal", "None", "a normal pokemon", 50.0, 12, 16, false);
-    assertEquals("The attack does 60.00 damage", myMove.attack(otherPokemon));
+    assertEquals("The attack does 60.00 damage!", myMove.attack(otherPokemon));
   }
 
   @Test
