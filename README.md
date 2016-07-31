@@ -1,3 +1,11 @@
+![Homepage](homepage.png)
+
+![Pokedex](pokedex.png)
+
+![Individual Pokemon Page](pokemon.png)
+
+![Battle](battle.png)
+
 # _Pokedex_
 
 #### _A Java web app that stores the original 151 Pokemon in the Pokedex (using SQL database) along with their moves which are used in a separate battle mode game._
@@ -39,11 +47,11 @@ _Many images on full pokedex page. Run fine when files are local but if we decid
 
 ## Support and contact details
 
-_For all issues and support, please contact:
-Peter Beach at peterbeach2@gmail.com
-Adam Craig at ajcraig@suffolk.edu
-Ashley Maceli at ashley.maceli@gmail.com
-Kyle Wolfson at wolfsonk@gmail.com_
+_For all issues and support, please contact:_
+* _Peter Beach at peterbeach2@gmail.com_
+* _Adam Craig at ajcraig@suffolk.edu_
+* _Ashley Maceli at ashley.maceli@gmail.com_
+* _Kyle Wolfson at wolfsonk@gmail.com_
 
 ## Technologies Used
 
